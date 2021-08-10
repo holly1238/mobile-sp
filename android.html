@@ -1,0 +1,1148 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Android &mdash; PyTorch Mobile .0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="iOS" href="ios.html" />
+    <link rel="prev" title="Quickstarts" href="quickstarts.html" />
+  <!-- Google Analytics -->
+  
+  <!-- End Google Analytics -->
+  
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://pytorch.org/" aria-label="PyTorch"></a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pytorch.org/get-started">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/ecosystem">Ecosystem</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/mobile">Mobile</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/blog/">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/tutorials">Tutorials</a>
+          </li>
+
+          <li>
+            <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
+              <a class="resource-option with-down-orange-arrow">
+                Docs
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/docs/stable/index.html">
+                  <span class="dropdown-title">PyTorch</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/audio/stable/index.html">
+                  <span class="dropdown-title">torchaudio</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/text/stable/index.html">
+                  <span class="dropdown-title">torchtext</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/vision/stable/index.html">
+                  <span class="dropdown-title">torchvision</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/elastic/">
+                  <span class="dropdown-title">TorchElastic</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/serve/">
+                  <span class="dropdown-title">TorchServe</span>
+                  <p></p>
+                </a>
+                <a class="doc-dropdown-option nav-dropdown-item" href="https://pytorch.org/xla">
+                  <span class="dropdown-title">PyTorch on XLA Devices</span>
+                  <p></p>
+                </a>
+            </div>
+          </li>
+
+          <li>
+            <div id="resourcesDropdownButton" data-toggle="resources-dropdown" class="resources-dropdown">
+              <a class="resource-option with-down-arrow">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://pytorch.org/features">
+                  <span class="dropdown-title">About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://pytorch.org/#community-module">
+                  <span class="dropdown-title">Community</span>
+                  <p>Join the PyTorch developer community to contribute, learn, and get your questions answered.</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://pytorch.org/resources">
+                  <span class="dropdown-title">Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://discuss.pytorch.org/" target="_blank">
+                  <span class="dropdown-title">Forums</span>
+                  <p>A place to discuss PyTorch code, issues, install, research</p>
+                </a>
+                <a class="nav-dropdown-item" href="https://pytorch.org/hub">
+                  <span class="dropdown-title">Models (Beta)</span>
+                  <p>Discover, publish, and reuse pre-trained models</p>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="https://github.com/pytorch/pytorch">GitHub</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+  </div>
+</div>
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="home.html">PyTorch Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstarts.html">Quickstarts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Android</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="_sources/android.rst.txt" rel="nofollow"><img src="_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="android">
+<h1>Android<a class="headerlink" href="#android" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quickstart-with-a-helloworld-example">
+<h2>Quickstart with a HelloWorld Example<a class="headerlink" href="#quickstart-with-a-helloworld-example" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp">HelloWorld</a>
+is a simple image classification application that demonstrates how to
+use PyTorch Android API. This application runs TorchScript serialized
+TorchVision pretrained resnet18 model on static image which is packaged
+inside the app as android asset.</p>
+<div class="section" id="model-preparation">
+<h3>1. Model Preparation<a class="headerlink" href="#model-preparation" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start with model preparation. If you are familiar with PyTorch,
+you probably should already know how to train and save your model. In
+case you don’t, we are going to use a pre-trained image classification
+model
+(<a class="reference external" href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/">MobileNetV2</a>).
+To install it, run the command below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torchvision</span>
+</pre></div>
+</div>
+<p>To serialize the model you can use python
+<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/trace_model.py">script</a>
+in the root folder of HelloWorld app:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">from</span> <span class="nn">torch.utils.mobile_optimizer</span> <span class="k">import</span> <span class="n">optimize_for_mobile</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">mobilenet_v2</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">example</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="n">traced_script_module</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">example</span><span class="p">)</span>
+<span class="n">traced_script_module_optimized</span> <span class="o">=</span> <span class="n">optimize_for_mobile</span><span class="p">(</span><span class="n">traced_script_module</span><span class="p">)</span>
+<span class="n">traced_script_module_optimized</span><span class="o">.</span><span class="n">_save_for_lite_interpreter</span><span class="p">(</span><span class="s2">&quot;app/src/main/assets/model.ptl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If everything works well, we should have our model - <code class="docutils literal notranslate"><span class="pre">model.ptl</span></code>
+generated in the assets folder of android application. That will be
+packaged inside android application as <code class="docutils literal notranslate"><span class="pre">asset</span></code> and can be used on the
+device.</p>
+<p>More details about TorchScript you can find in <a class="reference external" href="https://pytorch.org/docs/stable/jit.html">tutorials on
+pytorch.org</a></p>
+</div>
+<div class="section" id="cloning-from-github">
+<h3>2. Cloning from github<a class="headerlink" href="#cloning-from-github" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pytorch</span><span class="o">/</span><span class="n">android</span><span class="o">-</span><span class="n">demo</span><span class="o">-</span><span class="n">app</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">HelloWorldApp</span>
+</pre></div>
+</div>
+<p>If <a class="reference external" href="https://developer.android.com/studio/index.html#command-tools">Android
+SDK</a>
+and <a class="reference external" href="https://developer.android.com/ndk/downloads">Android NDK</a> are
+already installed you can install this application to the connected
+android device or emulator with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gradlew</span> <span class="n">installDebug</span>
+</pre></div>
+</div>
+<p>We recommend you to open this project in <a class="reference external" href="https://developer.android.com/studio">Android Studio
+3.5.1+</a>. At the moment PyTorch
+Android and demo applications use <a class="reference external" href="https://developer.android.com/studio/releases/gradle-plugin#3-5-0">android gradle plugin of version
+3.5.0</a>,
+which is supported only by Android Studio version 3.5.1 and higher.
+Using Android Studio you will be able to install Android NDK and Android
+SDK with Android Studio UI.</p>
+</div>
+<div class="section" id="gradle-dependencies">
+<h3>3. Gradle dependencies<a class="headerlink" href="#gradle-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>Pytorch android is added to the HelloWorld as <a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/build.gradle#L28-L29">gradle
+dependencies</a>
+in build.gradle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
+    <span class="n">jcenter</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.pytorch:pytorch_android_lite:1.9.0&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.pytorch:pytorch_android_torchvision:1.9.0&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">org.pytorch:pytorch_android</span></code> is the main dependency with
+PyTorch Android API, including libtorch native library for all 4 android
+abis (armeabi-v7a, arm64-v8a, x86, x86_64). Further in this doc you can
+find how to rebuild it only for specific list of android abis.</p>
+<p><code class="docutils literal notranslate"><span class="pre">org.pytorch:pytorch_android_torchvision</span></code> - additional library with
+utility functions for converting <code class="docutils literal notranslate"><span class="pre">android.media.Image</span></code> and
+<code class="docutils literal notranslate"><span class="pre">android.graphics.Bitmap</span></code> to tensors.</p>
+</div>
+<div class="section" id="reading-image-from-android-asset">
+<h3>4. Reading image from Android Asset<a class="headerlink" href="#reading-image-from-android-asset" title="Permalink to this headline">¶</a></h3>
+<p>All the logic happens in
+<code class="docutils literal notranslate"><span class="pre">`org.pytorch.helloworld.MainActivity</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java#L31-L69">https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java#L31-L69</a>&gt;`__.
+As a first step we read <code class="docutils literal notranslate"><span class="pre">image.jpg</span></code> to <code class="docutils literal notranslate"><span class="pre">android.graphics.Bitmap</span></code>
+using the standard Android API.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Bitmap</span> <span class="n">bitmap</span> <span class="o">=</span> <span class="n">BitmapFactory</span><span class="o">.</span><span class="n">decodeStream</span><span class="p">(</span><span class="n">getAssets</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;image.jpg&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-mobile-module">
+<h3>5. Loading Mobile Module<a class="headerlink" href="#loading-mobile-module" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Module</span> <span class="n">module</span> <span class="o">=</span> <span class="n">Module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">assetFilePath</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="s2">&quot;model.ptl&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">org.pytorch.Module</span></code> represents <code class="docutils literal notranslate"><span class="pre">torch::jit::mobile::Module</span></code> that
+can be loaded with <code class="docutils literal notranslate"><span class="pre">load</span></code> method specifying file path to the
+serialized to file model.</p>
+</div>
+<div class="section" id="preparing-input">
+<h3>6. Preparing Input<a class="headerlink" href="#preparing-input" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tensor</span> <span class="n">inputTensor</span> <span class="o">=</span> <span class="n">TensorImageUtils</span><span class="o">.</span><span class="n">bitmapToFloat32Tensor</span><span class="p">(</span><span class="n">bitmap</span><span class="p">,</span>
+    <span class="n">TensorImageUtils</span><span class="o">.</span><span class="n">TORCHVISION_NORM_MEAN_RGB</span><span class="p">,</span> <span class="n">TensorImageUtils</span><span class="o">.</span><span class="n">TORCHVISION_NORM_STD_RGB</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">org.pytorch.torchvision.TensorImageUtils</span></code> is part of
+<code class="docutils literal notranslate"><span class="pre">org.pytorch:pytorch_android_torchvision</span></code> library. The
+<code class="docutils literal notranslate"><span class="pre">TensorImageUtils#bitmapToFloat32Tensor</span></code> method creates tensors in the
+<a class="reference external" href="https://pytorch.org/docs/stable/torchvision/models.html">torchvision
+format</a>
+using <code class="docutils literal notranslate"><span class="pre">android.graphics.Bitmap</span></code> as a source.</p>
+<blockquote>
+<div>All pre-trained models expect input images normalized in the same
+way, i.e.&nbsp;mini-batches of 3-channel RGB images of shape (3 x H x W),
+where H and W are expected to be at least 224. The images have to be
+loaded in to a range of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> and then normalized using
+<code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">[0.485,</span> <span class="pre">0.456,</span> <span class="pre">0.406]</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">=</span> <span class="pre">[0.229,</span> <span class="pre">0.224,</span> <span class="pre">0.225]</span></code></div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">inputTensor</span></code>’s shape is <code class="docutils literal notranslate"><span class="pre">1x3xHxW</span></code>, where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are
+bitmap height and width appropriately.</p>
+</div>
+<div class="section" id="run-inference">
+<h3>7. Run Inference<a class="headerlink" href="#run-inference" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tensor</span> <span class="n">outputTensor</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">IValue</span><span class="o">.</span><span class="n">from</span><span class="p">(</span><span class="n">inputTensor</span><span class="p">))</span><span class="o">.</span><span class="n">toTensor</span><span class="p">();</span>
+<span class="nb">float</span><span class="p">[]</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">outputTensor</span><span class="o">.</span><span class="n">getDataAsFloatArray</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">org.pytorch.Module.forward</span></code> method runs loaded module’s <code class="docutils literal notranslate"><span class="pre">forward</span></code>
+method and gets result as <code class="docutils literal notranslate"><span class="pre">org.pytorch.Tensor</span></code> outputTensor with shape
+<code class="docutils literal notranslate"><span class="pre">1x1000</span></code>.</p>
+</div>
+<div class="section" id="processing-results">
+<h3>8. Processing results<a class="headerlink" href="#processing-results" title="Permalink to this headline">¶</a></h3>
+<p>Its content is retrieved using
+<code class="docutils literal notranslate"><span class="pre">org.pytorch.Tensor.getDataAsFloatArray()</span></code> method that returns java
+array of floats with scores for every image net class.</p>
+<p>After that we just find index with maximum score and retrieve predicted
+class name from <code class="docutils literal notranslate"><span class="pre">ImageNetClasses.IMAGENET_CLASSES</span></code> array that contains
+all ImageNet classes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">maxScore</span> <span class="o">=</span> <span class="o">-</span><span class="n">Float</span><span class="o">.</span><span class="n">MAX_VALUE</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">maxScoreIdx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">scores</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">maxScore</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">maxScore</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">maxScoreIdx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">String</span> <span class="n">className</span> <span class="o">=</span> <span class="n">ImageNetClasses</span><span class="o">.</span><span class="n">IMAGENET_CLASSES</span><span class="p">[</span><span class="n">maxScoreIdx</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>In the following sections you can find detailed explanations of PyTorch
+Android API, code walk through for a bigger <a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/PyTorchDemoApp">demo
+application</a>,
+implementation details of the API, how to customize and build it from
+source.</p>
+</div>
+</div>
+<div class="section" id="pytorch-demo-application">
+<h2>PyTorch Demo Application<a class="headerlink" href="#pytorch-demo-application" title="Permalink to this headline">¶</a></h2>
+<p>We have also created another more complex PyTorch Android demo
+application that does image classification from camera output and text
+classification in the <a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/PyTorchDemoApp">same github
+repo</a>.</p>
+<p>To get device camera output it uses <a class="reference external" href="https://developer.android.com/training/camerax">Android CameraX
+API</a>. All the logic
+that works with CameraX is separated to
+<code class="docutils literal notranslate"><span class="pre">`org.pytorch.demo.vision.AbstractCameraXActivity</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java">https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java</a>&gt;`__
+class.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">setupCameraX</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">final</span> <span class="n">PreviewConfig</span> <span class="n">previewConfig</span> <span class="o">=</span> <span class="n">new</span> <span class="n">PreviewConfig</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">();</span>
+    <span class="n">final</span> <span class="n">Preview</span> <span class="n">preview</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Preview</span><span class="p">(</span><span class="n">previewConfig</span><span class="p">);</span>
+    <span class="n">preview</span><span class="o">.</span><span class="n">setOnPreviewOutputUpdateListener</span><span class="p">(</span><span class="n">output</span> <span class="o">-&gt;</span> <span class="n">mTextureView</span><span class="o">.</span><span class="n">setSurfaceTexture</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">getSurfaceTexture</span><span class="p">()));</span>
+
+    <span class="n">final</span> <span class="n">ImageAnalysisConfig</span> <span class="n">imageAnalysisConfig</span> <span class="o">=</span>
+        <span class="n">new</span> <span class="n">ImageAnalysisConfig</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">setTargetResolution</span><span class="p">(</span><span class="n">new</span> <span class="n">Size</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">setCallbackHandler</span><span class="p">(</span><span class="n">mBackgroundHandler</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">setImageReaderMode</span><span class="p">(</span><span class="n">ImageAnalysis</span><span class="o">.</span><span class="n">ImageReaderMode</span><span class="o">.</span><span class="n">ACQUIRE_LATEST_IMAGE</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+    <span class="n">final</span> <span class="n">ImageAnalysis</span> <span class="n">imageAnalysis</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ImageAnalysis</span><span class="p">(</span><span class="n">imageAnalysisConfig</span><span class="p">);</span>
+    <span class="n">imageAnalysis</span><span class="o">.</span><span class="n">setAnalyzer</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">rotationDegrees</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>
+          <span class="n">analyzeImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">rotationDegrees</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="n">CameraX</span><span class="o">.</span><span class="n">bindToLifecycle</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">preview</span><span class="p">,</span> <span class="n">imageAnalysis</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">void</span> <span class="n">analyzeImage</span><span class="p">(</span><span class="n">android</span><span class="o">.</span><span class="n">media</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="nb">int</span> <span class="n">rotationDegrees</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where the <code class="docutils literal notranslate"><span class="pre">analyzeImage</span></code> method process the camera output,
+<code class="docutils literal notranslate"><span class="pre">android.media.Image</span></code>.</p>
+<p>It uses the aforementioned
+<code class="docutils literal notranslate"><span class="pre">`TensorImageUtils.imageYUV420CenterCropToFloat32Tensor</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90">https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90</a>&gt;`__
+method to convert <code class="docutils literal notranslate"><span class="pre">android.media.Image</span></code> in <code class="docutils literal notranslate"><span class="pre">YUV420</span></code> format to input
+tensor.</p>
+<p>After getting predicted scores from the model it finds top K classes
+with the highest scores and shows on the UI.</p>
+<div class="section" id="language-processing-example">
+<h3>Language Processing Example<a class="headerlink" href="#language-processing-example" title="Permalink to this headline">¶</a></h3>
+<p>Another example is natural language processing, based on an LSTM model,
+trained on a reddit comments dataset. The logic happens in
+<code class="docutils literal notranslate"><span class="pre">`TextClassificattionActivity</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java">https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java</a>&gt;`__.</p>
+<p>Result class names are packaged inside the TorchScript model and
+initialized just after initial module initialization. The module has a
+<code class="docutils literal notranslate"><span class="pre">get_classes</span></code> method that returns <code class="docutils literal notranslate"><span class="pre">List[str]</span></code>, which can be called
+using method <code class="docutils literal notranslate"><span class="pre">Module.runMethod(methodName)</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mModule</span> <span class="o">=</span> <span class="n">Module</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">moduleFileAbsoluteFilePath</span><span class="p">);</span>
+<span class="n">IValue</span> <span class="n">getClassesOutput</span> <span class="o">=</span> <span class="n">mModule</span><span class="o">.</span><span class="n">runMethod</span><span class="p">(</span><span class="s2">&quot;get_classes&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The returned <code class="docutils literal notranslate"><span class="pre">IValue</span></code> can be converted to java array of <code class="docutils literal notranslate"><span class="pre">IValue</span></code>
+using <code class="docutils literal notranslate"><span class="pre">IValue.toList()</span></code> and processed to an array of strings using
+<code class="docutils literal notranslate"><span class="pre">IValue.toStr()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IValue</span><span class="p">[]</span> <span class="n">classesListIValue</span> <span class="o">=</span> <span class="n">getClassesOutput</span><span class="o">.</span><span class="n">toList</span><span class="p">();</span>
+<span class="n">String</span><span class="p">[]</span> <span class="n">moduleClasses</span> <span class="o">=</span> <span class="n">new</span> <span class="n">String</span><span class="p">[</span><span class="n">classesListIValue</span><span class="o">.</span><span class="n">length</span><span class="p">];</span>
+<span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">IValue</span> <span class="n">iv</span> <span class="p">:</span> <span class="n">classesListIValue</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">moduleClasses</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">iv</span><span class="o">.</span><span class="n">toStr</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Entered text is converted to java array of bytes with <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>
+encoding. <code class="docutils literal notranslate"><span class="pre">Tensor.fromBlobUnsigned</span></code> creates tensor of <code class="docutils literal notranslate"><span class="pre">dtype=uint8</span></code>
+from that array of bytes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">byte</span><span class="p">[]</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">getBytes</span><span class="p">(</span><span class="n">Charset</span><span class="o">.</span><span class="n">forName</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">));</span>
+<span class="n">final</span> <span class="n">long</span><span class="p">[]</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">new</span> <span class="n">long</span><span class="p">[]{</span><span class="mi">1</span><span class="p">,</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">length</span><span class="p">};</span>
+<span class="n">final</span> <span class="n">Tensor</span> <span class="n">inputTensor</span> <span class="o">=</span> <span class="n">Tensor</span><span class="o">.</span><span class="n">fromBlobUnsigned</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">shape</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Running inference of the model is similar to previous examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tensor</span> <span class="n">outputTensor</span> <span class="o">=</span> <span class="n">mModule</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">IValue</span><span class="o">.</span><span class="n">from</span><span class="p">(</span><span class="n">inputTensor</span><span class="p">))</span><span class="o">.</span><span class="n">toTensor</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>After that, the code processes the output, finding classes with the
+highest scores.</p>
+</div>
+</div>
+<div class="section" id="more-pytorch-android-demo-apps">
+<h2>More PyTorch Android Demo Apps<a class="headerlink" href="#more-pytorch-android-demo-apps" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/D2Go">D2Go</a>
+demonstrates a Python script that creates the much lighter and much
+faster Facebook <a class="reference external" href="https://github.com/facebookresearch/d2go">D2Go</a>
+model that is powered by PyTorch 1.8, torchvision 0.9, and Detectron2
+with built-in SOTA networks for mobile, and an Android app that uses it
+to detect objects from pictures in your photos, taken with camera, or
+with live camera. This demo app also shows how to use the native
+pre-built torchvision-ops library.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/ImageSegmentation">Image
+Segmentation</a>
+demonstrates a Python script that converts the PyTorch
+<a class="reference external" href="https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/">DeepLabV3</a>
+model and an Android app that uses the model to segment images.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/ObjectDetection">Object
+Detection</a>
+demonstrates how to convert the popular
+<a class="reference external" href="https://pytorch.org/hub/ultralytics_yolov5/">YOLOv5</a> model and use
+it in an Android app that detects objects from pictures in your photos,
+taken with camera, or with live camera.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/Seq2SeqNMT">Neural Machine
+Translation</a>
+demonstrates how to convert a sequence-to-sequence neural machine
+translation model trained with the code in the <a class="reference external" href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html">PyTorch NMT
+tutorial</a>
+and use the model in an Android app to do French-English translation.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/QuestionAnswering">Question
+Answering</a>
+demonstrates how to convert a powerful transformer QA model and use the
+model in an Android app to answer questions about PyTorch Mobile and
+more.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/ViT4MNIST">Vision
+Transformer</a>
+demonstrates how to use Facebook’s latest Vision Transformer
+<a class="reference external" href="https://github.com/facebookresearch/deit">DeiT</a> model to do image
+classification, and how convert another Vision Transformer model and use
+it in an Android app to perform handwritten digit recognition.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/SpeechRecognition">Speech
+Recognition</a>
+demonstrates how to convert Facebook AI’s wav2vec 2.0, one of the
+leading models in speech recognition, to TorchScript and how to use the
+scripted model in an Android app to perform speech recognition.</p>
+<p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/TorchVideo">TorchVideo</a>
+demonstrates how to use a pre-trained video classification model,
+available at the newly released
+<a class="reference external" href="https://github.com/facebookresearch/pytorchvideo">PyTorchVideo</a>, on
+Android to see video classification results, updated per second while
+the video plays, on tested videos, videos from the Photos library, or
+even real-time videos.</p>
+</div>
+<div class="section" id="pytorch-android-tutorial-and-recipes">
+<h2>PyTorch Android Tutorial and Recipes<a class="headerlink" href="#pytorch-android-tutorial-and-recipes" title="Permalink to this headline">¶</a></h2>
+<p>A comprehensive step-by-step tutorial on how to prepare and run the
+PyTorch DeepLabV3 image segmentation model on Android.</p>
+<p>List of recipes for performance optimizations for using PyTorch on
+Mobile.</p>
+<p>Learn how to make Android application from the scratch that uses
+LibTorch C++ API and uses TorchScript model with custom C++ operator.</p>
+<p>Learn how to fuse a list of PyTorch modules into a single module to
+reduce the model size before quantization.</p>
+<p>Learn how to reduce the model size and make it run faster without losing
+much on accuracy.</p>
+<p>Learn how to convert the model to TorchScipt and (optional) optimize it
+for mobile apps.</p>
+<p>Learn how to add the model in an Android project and use the PyTorch
+library for Android.</p>
+</div>
+<div class="section" id="building-pytorch-android-from-source">
+<h2>Building PyTorch Android from Source<a class="headerlink" href="#building-pytorch-android-from-source" title="Permalink to this headline">¶</a></h2>
+<p>In some cases you might want to use a local build of PyTorch android,
+for example you may build custom LibTorch binary with another set of
+operators or to make local changes, or try out the latest PyTorch code.</p>
+<p>For this you can use <code class="docutils literal notranslate"><span class="pre">./scripts/build_pytorch_android.sh</span></code> script.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pytorch</span><span class="o">/</span><span class="n">pytorch</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">pytorch</span>
+<span class="n">sh</span> <span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">build_pytorch_android</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The workflow contains several steps:</p>
+<p>1. Build libtorch for android for all 4 android abis (armeabi-v7a,
+arm64-v8a, x86, x86_64)</p>
+<p>2. Create symbolic links to the results of those builds:
+<code class="docutils literal notranslate"><span class="pre">android/pytorch_android/src/main/jniLibs/${abi}</span></code> to the directory
+with output libraries
+<code class="docutils literal notranslate"><span class="pre">android/pytorch_android/src/main/cpp/libtorch_include/${abi}</span></code> to the
+directory with headers. These directories are used to build
+<code class="docutils literal notranslate"><span class="pre">libpytorch_jni.so</span></code> library, as part of the
+<code class="docutils literal notranslate"><span class="pre">pytorch_android-release.aar</span></code> bundle, that will be loaded on android
+device.</p>
+<p>3. And finally run <code class="docutils literal notranslate"><span class="pre">gradle</span></code> in <code class="docutils literal notranslate"><span class="pre">android/pytorch_android</span></code> directory
+with task <code class="docutils literal notranslate"><span class="pre">assembleRelease</span></code></p>
+<p>Script requires that Android SDK, Android NDK, Java SDK, and gradle are
+installed. They are specified as environment variables:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ANDROID_HOME</span></code> - path to <a class="reference external" href="https://developer.android.com/studio/command-line/sdkmanager.html">Android
+SDK</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">ANDROID_NDK</span></code> - path to <a class="reference external" href="https://developer.android.com/studio/projects/install-ndk">Android
+NDK</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">GRADLE_HOME</span></code> - path to <a class="reference external" href="https://gradle.org/releases/">gradle</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">JAVA_HOME</span></code> - path to <a class="reference external" href="https://www.oracle.com/java/technologies/javase-downloads.html#javasejdk">JAVA
+JDK</a></p>
+<p>After successful build, you should see the result as aar file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ find android -type f -name *aar
+android/pytorch_android/build/outputs/aar/pytorch_android-release.aar
+android/pytorch_android_torchvision/build/outputs/aar/pytorch_android_torchvision-release.aar
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-pytorch-android-libraries-built-from-source-or-nightly">
+<h2>Using the PyTorch Android Libraries Built from Source or Nightly<a class="headerlink" href="#using-the-pytorch-android-libraries-built-from-source-or-nightly" title="Permalink to this headline">¶</a></h2>
+<p>First add the two aar files built above, or downloaded from the nightly
+built PyTorch Android repos at
+<a class="reference external" href="https://oss.sonatype.org/#nexus-search;quick~pytorch_android">here</a>
+and
+<a class="reference external" href="https://oss.sonatype.org/#nexus-search;quick~torchvision_android">here</a>,
+to the Android project’s <code class="docutils literal notranslate"><span class="pre">lib</span></code> folder, then add in the project’s app
+<code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">allprojects</span> <span class="p">{</span>
+    <span class="n">repositories</span> <span class="p">{</span>
+        <span class="n">flatDir</span> <span class="p">{</span>
+            <span class="n">dirs</span> <span class="s1">&#39;libs&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+
+    <span class="o">//</span> <span class="k">if</span> <span class="n">using</span> <span class="n">the</span> <span class="n">libraries</span> <span class="n">built</span> <span class="kn">from</span> <span class="nn">source</span>
+    <span class="n">implementation</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="s1">&#39;pytorch_android-release&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="p">:</span><span class="s1">&#39;aar&#39;</span><span class="p">)</span>
+    <span class="n">implementation</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="s1">&#39;pytorch_android_torchvision-release&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="p">:</span><span class="s1">&#39;aar&#39;</span><span class="p">)</span>
+
+    <span class="o">//</span> <span class="k">if</span> <span class="n">using</span> <span class="n">the</span> <span class="n">nightly</span> <span class="n">built</span> <span class="n">libraries</span> <span class="n">downloaded</span> <span class="n">above</span><span class="p">,</span> <span class="k">for</span> <span class="n">example</span> <span class="n">the</span> <span class="mf">1.8</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">snapshot</span> <span class="n">on</span> <span class="n">Jan</span><span class="o">.</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">2021</span>
+    <span class="o">//</span> <span class="n">implementation</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="s1">&#39;pytorch_android-1.8.0-20210121.092759-172&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="p">:</span><span class="s1">&#39;aar&#39;</span><span class="p">)</span>
+    <span class="o">//</span> <span class="n">implementation</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="s1">&#39;pytorch_android_torchvision-1.8.0-20210121.092817-173&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="p">:</span><span class="s1">&#39;aar&#39;</span><span class="p">)</span>
+
+    <span class="o">...</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.android.support:appcompat-v7:28.0.0&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;com.facebook.fbjni:fbjni-java-only:0.0.3&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Also we have to add all transitive dependencies of our aars. As
+<code class="docutils literal notranslate"><span class="pre">pytorch_android</span></code> depends on
+<code class="docutils literal notranslate"><span class="pre">com.android.support:appcompat-v7:28.0.0</span></code> or
+<code class="docutils literal notranslate"><span class="pre">androidx.appcompat:appcompat:1.2.0</span></code>, we need to one of them. (In case
+of using maven dependencies they are added automatically from
+<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>).</p>
+</div>
+<div class="section" id="using-the-nightly-pytorch-android-libraries">
+<h2>Using the Nightly PyTorch Android Libraries<a class="headerlink" href="#using-the-nightly-pytorch-android-libraries" title="Permalink to this headline">¶</a></h2>
+<p>Other than using the aar files built from source or downloaded from the
+links in the previous section, you can also use the nightly built
+Android PyTorch and TorchVision libraries by adding in your app
+<code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> file the maven url and the nightly libraries
+implementation as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
+    <span class="n">maven</span> <span class="p">{</span>
+        <span class="n">url</span> <span class="s2">&quot;https://oss.sonatype.org/content/repositories/snapshots&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.pytorch:pytorch_android:1.8.0-SNAPSHOT&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.pytorch:pytorch_android_torchvision:1.8.0-SNAPSHOT&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is the easiest way to try out the latest PyTorch code and the
+Android libraries, if you do not need to make any local changes. But be
+aware you may need to build the model used on mobile in the latest
+PyTorch - using either the latest PyTorch code or a quick nightly
+install with commands like
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--pre</span> <span class="pre">torch</span> <span class="pre">torchvision</span> <span class="pre">-f</span> <span class="pre">https://download.pytorch.org/whl/nightly/cpu/torch_nightly.html</span></code>
+- to avoid possible model version mismatch errors when running the model
+on mobile.</p>
+</div>
+<div class="section" id="custom-build">
+<h2>Custom Build<a class="headerlink" href="#custom-build" title="Permalink to this headline">¶</a></h2>
+<p>To reduce the size of binaries you can do custom build of PyTorch
+Android with only set of operators required by your model. This includes
+two steps: preparing the list of operators from your model, rebuilding
+pytorch android with specified list.</p>
+<p>1. Verify your PyTorch version is 1.4.0 or above. You can do that by
+checking the value of <code class="docutils literal notranslate"><span class="pre">torch.__version__</span></code>.</p>
+<ol class="arabic simple" start="2">
+<li>Preparation of the list of operators</li>
+</ol>
+<p>List of operators of your serialized torchscript model can be prepared
+in yaml format using python api function <code class="docutils literal notranslate"><span class="pre">torch.jit.export_opnames()</span></code>.
+To dump the operators in your model, say <code class="docutils literal notranslate"><span class="pre">MobileNetV2</span></code>, run the
+following lines of Python code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dump list of operators used by MobileNetV2:</span>
+<span class="kn">import</span> <span class="nn">torch</span><span class="o">,</span> <span class="nn">yaml</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;MobileNetV2.pt&#39;</span><span class="p">)</span>
+<span class="n">ops</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">export_opnames</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;MobileNetV2.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ops</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Building PyTorch Android with prepared operators list.</li>
+</ol>
+<p>To build PyTorch Android with the prepared yaml list of operators,
+specify it in the environment variable <code class="docutils literal notranslate"><span class="pre">SELECTED_OP_LIST</span></code>. Also in the
+arguments, specify which Android ABIs it should build; by default it
+builds all 4 Android ABIs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build PyTorch Android library customized for MobileNetV2:</span>
+<span class="n">SELECTED_OP_LIST</span><span class="o">=</span><span class="n">MobileNetV2</span><span class="o">.</span><span class="n">yaml</span> <span class="n">scripts</span><span class="o">/</span><span class="n">build_pytorch_android</span><span class="o">.</span><span class="n">sh</span> <span class="n">arm64</span><span class="o">-</span><span class="n">v8a</span>
+</pre></div>
+</div>
+<p>After successful build you can integrate the result aar files to your
+android gradle project, following the steps from previous section of
+this tutorial (Building PyTorch Android from Source).</p>
+</div>
+<div class="section" id="use-pytorch-jit-interpreter">
+<h2>Use PyTorch JIT interpreter<a class="headerlink" href="#use-pytorch-jit-interpreter" title="Permalink to this headline">¶</a></h2>
+<p>PyTorch JIT interpreter is the default interpreter before 1.9 (a version
+of our PyTorch interpreter that is not as size-efficient). It will still
+be supported in 1.9, and can be used via <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repositories</span> <span class="p">{</span>
+    <span class="n">jcenter</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">dependencies</span> <span class="p">{</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.pytorch:pytorch_android:1.9.0&#39;</span>
+    <span class="n">implementation</span> <span class="s1">&#39;org.pytorch:pytorch_android_torchvision:1.9.0&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="android-tutorials">
+<h2>Android Tutorials<a class="headerlink" href="#android-tutorials" title="Permalink to this headline">¶</a></h2>
+<p>Watch the following <a class="reference external" href="https://youtu.be/5Lxuu16_28o">video</a> as PyTorch
+Partner Engineer Brad Heintz walks through steps for setting up the
+PyTorch Runtime for Android projects:</p>
+<p><a class="reference external" href="https://youtu.be/5Lxuu16_28o">|PyTorch Mobile Runtime for Android|{:height=“75%”
+width=“75%”}</a></p>
+<p>The corresponding code can be found
+<a class="reference external" href="https://github.com/pytorch/workshops/tree/master/PTMobileWalkthruAndroid">here</a>.</p>
+<p>Checkout our <a class="reference external" href="https://pytorch.org/tutorials/recipes/mobile_perf.html">Mobile Performance
+Recipes</a>
+which cover how to optimize your model and check if optimizations helped
+via benchmarking.</p>
+<p>In addition, follow this recipe to learn how to <a class="reference external" href="https://pytorch.org/tutorials/recipes/android_native_app_with_custom_op.html">make Native Android
+Application that use PyTorch prebuilt
+libraries</a>.</p>
+</div>
+<div class="section" id="api-docs">
+<h2>API Docs<a class="headerlink" href="#api-docs" title="Permalink to this headline">¶</a></h2>
+<p>You can find more details about the PyTorch Android API in the
+<a class="reference external" href="https://pytorch.org/javadoc/">Javadoc</a>.</p>
+<!-- Do not remove the below script --><script page-id="android" src="{{ site.baseurl }}/assets/menu-tab-selection.js"></script></div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ios.html" class="btn btn-neutral float-right" title="iOS" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="quickstarts.html" class="btn btn-neutral" title="Quickstarts" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Facebook.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Android</a><ul>
+<li><a class="reference internal" href="#quickstart-with-a-helloworld-example">Quickstart with a HelloWorld Example</a><ul>
+<li><a class="reference internal" href="#model-preparation">1. Model Preparation</a></li>
+<li><a class="reference internal" href="#cloning-from-github">2. Cloning from github</a></li>
+<li><a class="reference internal" href="#gradle-dependencies">3. Gradle dependencies</a></li>
+<li><a class="reference internal" href="#reading-image-from-android-asset">4. Reading image from Android Asset</a></li>
+<li><a class="reference internal" href="#loading-mobile-module">5. Loading Mobile Module</a></li>
+<li><a class="reference internal" href="#preparing-input">6. Preparing Input</a></li>
+<li><a class="reference internal" href="#run-inference">7. Run Inference</a></li>
+<li><a class="reference internal" href="#processing-results">8. Processing results</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pytorch-demo-application">PyTorch Demo Application</a><ul>
+<li><a class="reference internal" href="#language-processing-example">Language Processing Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-pytorch-android-demo-apps">More PyTorch Android Demo Apps</a></li>
+<li><a class="reference internal" href="#pytorch-android-tutorial-and-recipes">PyTorch Android Tutorial and Recipes</a></li>
+<li><a class="reference internal" href="#building-pytorch-android-from-source">Building PyTorch Android from Source</a></li>
+<li><a class="reference internal" href="#using-the-pytorch-android-libraries-built-from-source-or-nightly">Using the PyTorch Android Libraries Built from Source or Nightly</a></li>
+<li><a class="reference internal" href="#using-the-nightly-pytorch-android-libraries">Using the Nightly PyTorch Android Libraries</a></li>
+<li><a class="reference internal" href="#custom-build">Custom Build</a></li>
+<li><a class="reference internal" href="#use-pytorch-jit-interpreter">Use PyTorch JIT interpreter</a></li>
+<li><a class="reference internal" href="#android-tutorials">Android Tutorials</a></li>
+<li><a class="reference internal" href="#api-docs">API Docs</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+         <script type="text/javascript" src="_static/jquery.js"></script>
+         <script type="text/javascript" src="_static/underscore.js"></script>
+         <script type="text/javascript" src="_static/doctools.js"></script>
+         <script type="text/javascript" src="_static/language_data.js"></script>
+     
+
+  
+
+  <script type="text/javascript" src="_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="_static/js/vendor/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #00ff00;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #E73422;
+    }
+  </style>
+  
+
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://pytorch.org/docs/stable/index.html">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="https://pytorch.org/tutorials">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Find development resources and get your questions answered</p>
+          <a class="with-right-arrow" href="https://pytorch.org/resources">View Resources</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://pytorch.org/" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://pytorch.org/">PyTorch</a></li>
+            <li><a href="https://pytorch.org/get-started">Get Started</a></li>
+            <li><a href="https://pytorch.org/features">Features</a></li>
+            <li><a href="https://pytorch.org/ecosystem">Ecosystem</a></li>
+            <li><a href="https://pytorch.org/blog/">Blog</a></li>
+            <li><a href="https://github.com/pytorch/pytorch/blob/master/CONTRIBUTING.md">Contributing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://pytorch.org/resources">Resources</a></li>
+            <li><a href="https://pytorch.org/tutorials">Tutorials</a></li>
+            <li><a href="https://pytorch.org/docs/stable/index.html">Docs</a></li>
+            <li><a href="https://discuss.pytorch.org" target="_blank">Discuss</a></li>
+            <li><a href="https://github.com/pytorch/pytorch/issues" target="_blank">Github Issues</a></li>
+            <li><a href="https://pytorch.org/assets/brand-guidelines/PyTorch-Brand-Guidelines.pdf" target="_blank">Brand Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <ul>
+            <li class="list-title">Stay Connected</li>
+            <li>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://twitter.us14.list-manage.com/subscribe/post?u=75419c71fe0a935e53dfa4a3f&id=91d0dccd39"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="email-subscribe-form validate"
+                  target="_blank"
+                  novalidate>
+                  <div id="mc_embed_signup_scroll" class="email-subscribe-form-fields-wrapper">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" style="display:none;">Email Address</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_75419c71fe0a935e53dfa4a3f_91d0dccd39" tabindex="-1" value=""></div>
+
+                    <div class="clear">
+                      <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button email-subscribe-button">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="footer-social-icons">
+            <a href="https://www.facebook.com/pytorch" target="_blank" class="facebook"></a>
+            <a href="https://twitter.com/pytorch" target="_blank" class="twitter"></a>
+            <a href="https://www.youtube.com/pytorch" target="_blank" class="youtube"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner-wrapper">
+  <div class="container">
+    <p class="gdpr-notice">To analyze traffic and optimize your experience, we serve cookies on this site. By clicking or navigating, you agree to allow our usage of cookies. As the current maintainers of this site, Facebook’s Cookies Policy applies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/">Cookies Policy</a>.</p>
+    <img class="close-button" src="_static/images/pytorch-x.svg">
+  </div>
+</div>
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://pytorch.org/" aria-label="PyTorch"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://pytorch.org/get-started">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/ecosystem">Ecosystem</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/mobile">Mobile</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/hub">PyTorch Hub</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/blog/">Blog</a>
+          </li>
+
+          <li>
+            <a href="https://pytorch.org/tutorials">Tutorials</a>
+          </li>
+
+          <li class="resources-mobile-menu-title">
+            Docs
+          </li>
+
+          <ul class="resources-mobile-menu-items">
+            <li>
+              <a href="https://pytorch.org/docs/stable/index.html">PyTorch</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/audio/stable/index.html">torchaudio</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/text/stable/index.html">torchtext</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/vision/stable/index.html">torchvision</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/elastic/">TorchElastic</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/serve/">TorchServe</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/xla">PyTorch on XLA Devices</a>
+            </li>
+          </ul>
+
+          <li class="resources-mobile-menu-title">
+            Resources
+          </li>
+
+          <ul class="resources-mobile-menu-items">
+            <li>
+              <a href="https://pytorch.org/resources">Developer Resources</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/features">About</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/hub">Models (Beta)</a>
+            </li>
+
+            <li>
+              <a href="https://pytorch.org/#community-module">Community</a>
+            </li>
+
+            <li>
+              <a href="https://discuss.pytorch.org/">Forums</a>
+            </li>
+          </ul>
+
+          <li>
+            <a href="https://github.com/pytorch/pytorch">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+      filterTags.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>
