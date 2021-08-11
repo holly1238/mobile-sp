@@ -29,7 +29,7 @@
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PyTorch Mobile" href="home.html" />
+    <link rel="next" title="Quickstarts" href="quickstarts.html" />
   <!-- Google Analytics -->
   
   <!-- End Google Analytics -->
@@ -211,8 +211,8 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="home.html">PyTorch Mobile</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyTorch Mobile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstarts.html">Quickstarts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
@@ -290,107 +290,112 @@
               
   <div class="section" id="pytorch-mobile">
 <h1>PyTorch Mobile<a class="headerlink" href="#pytorch-mobile" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="home.html">PyTorch Mobile</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="home.html#key-features">Key features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="home.html#prototypes">Prototypes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="home.html#deployment-workflow">Deployment workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="home.html#examples-to-get-you-started">Examples to get you started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="home.html#demo-apps">Demo apps</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickstarts.html">Quickstarts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quickstarts.html#android">Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstarts.html#ios">iOS</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="android.html">Android</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="android.html#quickstart-with-a-helloworld-example">Quickstart with a HelloWorld Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="android.html#model-preparation">1. Model Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#cloning-from-github">2. Cloning from github</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#gradle-dependencies">3. Gradle dependencies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#reading-image-from-android-asset">4. Reading image from Android Asset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#loading-mobile-module">5. Loading Mobile Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#preparing-input">6. Preparing Input</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#run-inference">7. Run Inference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html#processing-results">8. Processing results</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#pytorch-demo-application">PyTorch Demo Application</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="android.html#language-processing-example">Language Processing Example</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#more-pytorch-android-demo-apps">More PyTorch Android Demo Apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#pytorch-android-tutorial-and-recipes">PyTorch Android Tutorial and Recipes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#building-pytorch-android-from-source">Building PyTorch Android from Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#using-the-pytorch-android-libraries-built-from-source-or-nightly">Using the PyTorch Android Libraries Built from Source or Nightly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#using-the-nightly-pytorch-android-libraries">Using the Nightly PyTorch Android Libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#custom-build">Custom Build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#use-pytorch-jit-interpreter">Use PyTorch JIT interpreter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#android-tutorials">Android Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="android.html#api-docs">API Docs</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#quickstart-with-a-hello-world-example">Quickstart with a Hello World Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#model-preparation">Model Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#install-libtorch-via-cocoapods">Install LibTorch via Cocoapods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#code-walkthrough">Code Walkthrough</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ios.html#image-loading">Image Loading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ios.html#torchscript-module">TorchScript Module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ios.html#run-inference">Run Inference</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#collect-results">Collect Results</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#pytorch-demo-app">PyTorch Demo App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#more-pytorch-ios-demo-apps">More PyTorch iOS Demo Apps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#image-segmentation">Image Segmentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#object-detection">Object Detection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#neural-machine-translation">Neural Machine Translation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#question-answering">Question Answering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#vision-transformer">Vision Transformer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#speech-recognition">Speech recognition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#video-classification">Video Classification</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#pytorch-ios-tutorial-and-recipes">PyTorch iOS Tutorial and Recipes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#image-segmentation-deeplabv3-on-ios">Image Segmentation DeepLabV3 on iOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#pytorch-mobile-performance-recipes">PyTorch Mobile Performance Recipes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#fuse-modules-recipe">Fuse Modules recipe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#quantization-for-mobile-recipe">Quantization for Mobile Recipe</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#script-and-optimize-for-mobile">Script and Optimize for Mobile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#model-preparation-for-ios-recipe">Model Preparation for iOS Recipe</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#build-pytorch-ios-libraries-from-source">Build PyTorch iOS Libraries from Source</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#build-libtorch-for-ios-simulators">Build LibTorch for iOS Simulators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#build-libtorch-for-arm64-devices">Build LibTorch for arm64 Devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ios.html#xcode-setup">XCode Setup</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#custom-build">Custom Build</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#use-pytorch-jit-interpreter">Use PyTorch JIT interpreter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#ios-tutorials">iOS Tutorials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#api-docs">API Docs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ios.html#issues-and-contribution">Issues and Contribution</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div></blockquote>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<p>There is a growing need to execute ML models on edge devices to reduce
+latency, preserve privacy, and enable new interactive use cases.</p>
+<p>The PyTorch Mobile runtime beta release allows you to seamlessly go from
+training a model to deploying it, while staying entirely within the
+PyTorch ecosystem. It provides an end-to-end workflow that simplifies
+the research to production environment for mobile devices. In addition,
+it paves the way for privacy-preserving features via federated learning
+techniques.</p>
+<p>PyTorch Mobile is in beta stage right now, and is already in wide scale
+production use. It will soon be available as a stable release once the
+APIs are locked down.</p>
+<div class="section" id="key-features">
+<h2>Key features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li>Available for <a class="reference external" href="%7B%7Bsite.baseurl%7D%7D/mobile/ios">iOS</a>,
+<a class="reference external" href="%7B%7Bsite.baseurl%7D%7D/mobile/android">Android</a> and Linux</li>
+<li>Provides APIs that cover common preprocessing and integration tasks
+needed for incorporating ML in mobile applications</li>
+<li>Support for tracing and scripting via TorchScript IR</li>
+<li>Support for XNNPACK floating point kernel libraries for Arm CPUs</li>
+<li>Integration of QNNPACK for 8-bit quantized kernels. Includes support
+for per-channel quantization, dynamic quantization and more</li>
+<li>Provides an <a class="reference external" href="https://pytorch.org/tutorials/recipes/mobile_interpreter.html">efficient mobile interpreter in Android and
+iOS</a>.
+Also supports build level optimization and selective compilation
+depending on the operators needed for user applications (i.e., the
+final binary size of the app is determined by the actual operators
+the app needs).</li>
+<li>Streamline model optimization via optimize_for_mobile</li>
+<li>Support for hardware backends like GPU, DSP, and NPU will be
+available soon in Beta</li>
 </ul>
+</div>
+<div class="section" id="prototypes">
+<h2>Prototypes<a class="headerlink" href="#prototypes" title="Permalink to this headline">¶</a></h2>
+<p>We have launched the following features in prototype, available in the
+PyTorch nightly releases, and would love to get your feedback on the
+<a class="reference external" href="https://discuss.pytorch.org/c/mobile/18">PyTorch forums</a>:</p>
+<ul class="simple">
+<li>GPU support on <a class="reference external" href="https://pytorch.org/tutorials/prototype/ios_gpu_workflow.html">iOS via
+Metal</a></li>
+<li>GPU support on <a class="reference external" href="https://pytorch.org/tutorials/prototype/vulkan_workflow.html">Android via
+Vulkan</a></li>
+<li>DSP and NPU support on Android via <a class="reference external" href="https://pytorch.org/tutorials/prototype/nnapi_mobilenetv2.html">Google
+NNAPI</a></li>
+</ul>
+</div>
+<div class="section" id="deployment-workflow">
+<h2>Deployment workflow<a class="headerlink" href="#deployment-workflow" title="Permalink to this headline">¶</a></h2>
+<p>A typical workflow from training to mobile deployment with the optional
+model optimization steps is outlined in the following figure.</p>
+</div>
+<div class="section" id="examples-to-get-you-started">
+<h2>Examples to get you started<a class="headerlink" href="#examples-to-get-you-started" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.youtube.com/watch?v=amTepUIR93k">PyTorch Mobile Runtime for
+iOS</a></li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=5Lxuu16_28o">PyTorch Mobile Runtime for
+Android</a></li>
+<li><a class="reference external" href="https://pytorch.org/tutorials/recipes/ptmobile_recipes_summary.html">PyTorch Mobile Recipes in
+Tutorials</a></li>
+<li><a class="reference external" href="https://pytorch.org/tutorials/beginner/deeplabv3_on_ios.html">Image Segmentation DeepLabV3 on
+iOS</a></li>
+<li><a class="reference external" href="https://pytorch.org/tutorials/beginner/deeplabv3_on_android.html">Image Segmentation DeepLabV3 on
+Android</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/D2Go">D2Go Object Detection on
+iOS</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/D2Go">D2Go Object Detection on
+Android</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/TorchVideo">PyTorchVideo on
+iOS</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/TorchVideo">PyTorchVideo on
+Android</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/SpeechRecognition">Speech Recognition on
+iOS</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/SpeechRecognition">Speech Recognition on
+Android</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/QuestionAnswering">Question Answering on
+iOS</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/QuestionAnswering">Question Answering on
+Android</a></li>
+</ul>
+</div>
+<div class="section" id="demo-apps">
+<h2>Demo apps<a class="headerlink" href="#demo-apps" title="Permalink to this headline">¶</a></h2>
+<p>Our new demo apps also include examples of image segmentation, object
+detection, neural machine translation, question answering, and vision
+transformers. They are available on both iOS and Android:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/pytorch/ios-demo-app">iOS demo apps</a></li>
+<li><a class="reference external" href="https://github.com/pytorch/android-demo-app">Android demo apps</a></li>
+</ul>
+<p># .. raw:: html</p>
+<p>#    &lt;!– Do not remove the below script –&gt;</p>
+<p># .. raw:: html</p>
+<p>#  &lt;script page-id=”home” src=”{{ site.baseurl }}/assets/menu-tab-selection.js”&gt;&lt;/script&gt;</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyTorch Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstarts.html">Quickstarts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -401,7 +406,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="home.html" class="btn btn-neutral float-right" title="PyTorch Mobile" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="quickstarts.html" class="btn btn-neutral float-right" title="Quickstarts" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
     </div>
@@ -434,8 +439,14 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">PyTorch Mobile</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#">PyTorch Mobile</a><ul>
+<li><a class="reference internal" href="#key-features">Key features</a></li>
+<li><a class="reference internal" href="#prototypes">Prototypes</a></li>
+<li><a class="reference internal" href="#deployment-workflow">Deployment workflow</a></li>
+<li><a class="reference internal" href="#examples-to-get-you-started">Examples to get you started</a></li>
+<li><a class="reference internal" href="#demo-apps">Demo apps</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
