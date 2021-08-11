@@ -97,14 +97,6 @@ transformers. They are available on both iOS and Android:
 -  `iOS demo apps <https://github.com/pytorch/ios-demo-app>`__
 -  `Android demo apps <https://github.com/pytorch/android-demo-app>`__
 
-# .. raw:: html
-
-#    <!-- Do not remove the below script -->
-
-# .. raw:: html
-
-#  <script page-id="home" src="{{ site.baseurl }}/assets/menu-tab-selection.js"></script>
-
 
 .. toctree::
   :maxdepth: 1
