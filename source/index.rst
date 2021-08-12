@@ -99,12 +99,12 @@ transformers. They are available on both iOS and Android:
 
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
   :caption: Contents:
   :includehidden:
 
   index
-  quickstarts
+  quickstarts*
   models
   performance
   operators
