@@ -99,7 +99,7 @@ transformers. They are available on both iOS and Android:
 
 
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
   :caption: Contents:
   :includehidden:
 
