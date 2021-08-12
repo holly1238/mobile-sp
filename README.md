@@ -12,3 +12,7 @@ it by opening the index.html file on your local machine, or by running a
 server such as `python -m http.server`
 
 The toc for this site is contained in the source/contents.rst file. 
+
+This repo contains a github workflow script that builds out the documentation and
+copies the output to gh-pages branch. This branch is used to render the
+site through github pages. 
