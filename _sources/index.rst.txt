@@ -102,6 +102,7 @@ transformers. They are available on both iOS and Android:
   :maxdepth: 1
   :caption: Contents:
   :includehidden:
+  :glob:
 
   index
   quickstarts/*
