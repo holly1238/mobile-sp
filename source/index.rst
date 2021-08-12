@@ -105,6 +105,10 @@ transformers. They are available on both iOS and Android:
 
   index
   quickstarts
+  models
+  performance
+  operators
+  tutorials
   android
   ios
 
