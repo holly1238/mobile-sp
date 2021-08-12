@@ -104,7 +104,7 @@ transformers. They are available on both iOS and Android:
   :includehidden:
 
   index
-  quickstarts*
+  quickstarts/*
   models
   performance
   operators
