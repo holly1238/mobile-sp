@@ -1,10 +1,11 @@
 Android Quickstart
 ==================
 
-`HelloWorld`_ is a simple image classification application that
-demonstrates how to use PyTorch Android API. This application runs
-TorchScript serialized TorchVision pretrained resnet18 model on static
-image which is packaged inside the app as android asset.
+`HelloWorld <https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp>`__
+is a simple image classification application that demonstrates how to
+use PyTorch Android API. This application runs TorchScript serialized
+TorchVision pretrained resnet18 model on static image which is packaged
+inside the app as android asset.
 
 1. Model Preparation
 ^^^^^^^^^^^^^^^^^^^^
@@ -12,14 +13,17 @@ image which is packaged inside the app as android asset.
 Let’s start with model preparation. If you are familiar with PyTorch,
 you probably should already know how to train and save your model. In
 case you don’t, we are going to use a pre-trained image classification
-model (`MobileNetV2`_). To install it, run the command below:
+model
+(`MobileNetV2 <https://pytorch.org/hub/pytorch_vision_mobilenet_v2/>`__).
+To install it, run the command below:
 
 ::
 
    pip install torchvision
 
-To serialize the model you can use python `script`_ in the root folder
-of HelloWorld app:
+To serialize the model you can use python
+`script <https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/trace_model.py>`__
+in the root folder of HelloWorld app:
 
 ::
 
@@ -40,7 +44,7 @@ packaged inside android application as ``asset`` and can be used on the
 device.
 
 More details about TorchScript you can find in `tutorials on
-pytorch.org`_
+pytorch.org <https://pytorch.org/docs/stable/jit.html>`__
 
 2. Cloning from github
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -50,25 +54,30 @@ pytorch.org`_
    git clone https://github.com/pytorch/android-demo-app.git
    cd HelloWorldApp
 
-If `Android SDK`_ and `Android NDK`_ are already installed you can
-install this application to the connected android device or emulator
-with:
+If `Android
+SDK <https://developer.android.com/studio/index.html#command-tools>`__
+and `Android NDK <https://developer.android.com/ndk/downloads>`__ are
+already installed you can install this application to the connected
+android device or emulator with:
 
 ::
 
    ./gradlew installDebug
 
-We recommend you to open this project in `Android Studio 3.5.1+`_. At
-the moment PyTorch Android and demo applications use `android gradle
-plugin of version 3.5.0`_, which is supported only by Android Studio
-version 3.5.1 and higher. Using Android Studio you will be able to
-install Android NDK and Android SDK with Android Studio UI.
+We recommend you to open this project in `Android Studio
+3.5.1+ <https://developer.android.com/studio>`__. At the moment PyTorch
+Android and demo applications use `android gradle plugin of version
+3.5.0 <https://developer.android.com/studio/releases/gradle-plugin#3-5-0>`__,
+which is supported only by Android Studio version 3.5.1 and higher.
+Using Android Studio you will be able to install Android NDK and Android
+SDK with Android Studio UI.
 
 3. Gradle dependencies
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Pytorch android is added to the HelloWorld as `gradle dependencies`_ in
-build.gradle:
+Pytorch android is added to the HelloWorld as `gradle
+dependencies <https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/build.gradle#L28-L29>`__
+in build.gradle:
 
 ::
 
@@ -90,14 +99,13 @@ find how to rebuild it only for specific list of android abis.
 utility functions for converting ``android.media.Image`` and
 ``android.graphics.Bitmap`` to tensors.
 
-.. _gradle dependencies: https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/build.gradle#L28-L29
-
 4. Reading image from Android Asset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All the logic happens in ```org.pytorch.helloworld.MainActivity```_. As
-a first step we read ``image.jpg`` to ``android.graphics.Bitmap`` using
-the standard Android API.
+All the logic happens in
+```org.pytorch.helloworld.MainActivity`` <https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java#L31-L69>`__.
+As a first step we read ``image.jpg`` to ``android.graphics.Bitmap``
+using the standard Android API.
 
 ::
 
@@ -114,8 +122,6 @@ the standard Android API.
 can be loaded with ``load`` method specifying file path to the
 serialized to file model.
 
-.. _``org.pytorch.helloworld.MainActivity``: https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java#L31-L69
-
 6. Preparing Input
 ^^^^^^^^^^^^^^^^^^
 
@@ -127,7 +133,9 @@ serialized to file model.
 ``org.pytorch.torchvision.TensorImageUtils`` is part of
 ``org.pytorch:pytorch_android_torchvision`` library. The
 ``TensorImageUtils#bitmapToFloat32Tensor`` method creates tensors in the
-`torchvision format`_ using ``android.graphics.Bitmap`` as a source.
+`torchvision
+format <https://pytorch.org/docs/stable/torchvision/models.html>`__
+using ``android.graphics.Bitmap`` as a source.
 
    All pre-trained models expect input images normalized in the same
    way, i.e. mini-batches of 3-channel RGB images of shape (3 x H x W),
@@ -137,8 +145,6 @@ serialized to file model.
 
 ``inputTensor``\ ’s shape is ``1x3xHxW``, where ``H`` and ``W`` are
 bitmap height and width appropriately.
-
-.. _torchvision format: https://pytorch.org/docs/stable/torchvision/models.html
 
 7. Run Inference
 ^^^^^^^^^^^^^^^^
