@@ -82,14 +82,95 @@ build.gradle:
    }
 
 Where ``org.pytorch:pytorch_android`` is the main dependency with
-PyTorch Android API
+PyTorch Android API, including libtorch native library for all 4 android
+abis (armeabi-v7a, arm64-v8a, x86, x86_64). Further in this doc you can
+find how to rebuild it only for specific list of android abis.
 
-.. _HelloWorld: https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp
-.. _MobileNetV2: https://pytorch.org/hub/pytorch_vision_mobilenet_v2/
-.. _script: https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/trace_model.py
-.. _tutorials on pytorch.org: https://pytorch.org/docs/stable/jit.html
-.. _Android SDK: https://developer.android.com/studio/index.html#command-tools
-.. _Android NDK: https://developer.android.com/ndk/downloads
-.. _Android Studio 3.5.1+: https://developer.android.com/studio
-.. _android gradle plugin of version 3.5.0: https://developer.android.com/studio/releases/gradle-plugin#3-5-0
+``org.pytorch:pytorch_android_torchvision`` - additional library with
+utility functions for converting ``android.media.Image`` and
+``android.graphics.Bitmap`` to tensors.
+
 .. _gradle dependencies: https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/build.gradle#L28-L29
+
+4. Reading image from Android Asset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All the logic happens in ```org.pytorch.helloworld.MainActivity```_. As
+a first step we read ``image.jpg`` to ``android.graphics.Bitmap`` using
+the standard Android API.
+
+::
+
+   Bitmap bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
+
+5. Loading Mobile Module
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+   Module module = Module.load(assetFilePath(this, "model.ptl"));
+
+``org.pytorch.Module`` represents ``torch::jit::mobile::Module`` that
+can be loaded with ``load`` method specifying file path to the
+serialized to file model.
+
+.. _``org.pytorch.helloworld.MainActivity``: https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java#L31-L69
+
+6. Preparing Input
+^^^^^^^^^^^^^^^^^^
+
+::
+
+   Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(bitmap,
+       TensorImageUtils.TORCHVISION_NORM_MEAN_RGB, TensorImageUtils.TORCHVISION_NORM_STD_RGB);
+
+``org.pytorch.torchvision.TensorImageUtils`` is part of
+``org.pytorch:pytorch_android_torchvision`` library. The
+``TensorImageUtils#bitmapToFloat32Tensor`` method creates tensors in the
+`torchvision format`_ using ``android.graphics.Bitmap`` as a source.
+
+   All pre-trained models expect input images normalized in the same
+   way, i.e. mini-batches of 3-channel RGB images of shape (3 x H x W),
+   where H and W are expected to be at least 224. The images have to be
+   loaded in to a range of ``[0, 1]`` and then normalized using
+   ``mean = [0.485, 0.456, 0.406]`` and ``std = [0.229, 0.224, 0.225]``
+
+``inputTensor``\ ’s shape is ``1x3xHxW``, where ``H`` and ``W`` are
+bitmap height and width appropriately.
+
+.. _torchvision format: https://pytorch.org/docs/stable/torchvision/models.html
+
+7. Run Inference
+^^^^^^^^^^^^^^^^
+
+::
+
+   Tensor outputTensor = module.forward(IValue.from(inputTensor)).toTensor();
+   float[] scores = outputTensor.getDataAsFloatArray();
+
+``org.pytorch.Module.forward`` method runs loaded module’s ``forward``
+method and gets result as ``org.pytorch.Tensor`` outputTensor with shape
+``1x1000``.
+
+8. Processing results
+^^^^^^^^^^^^^^^^^^^^^
+
+Its content is retrieved using
+``org.pytorch.Tensor.getDataAsFloatArray()`` method that returns java
+array of floats with scores for every image net class.
+
+After that we just find index with maximum score and retrieve predicted
+class name from ``ImageNetClasses.IMAGENET_CLASSES`` array that contains
+all ImageNet classes.
+
+::
+
+   float maxScore = -Float.MAX_VALUE;
+   int maxScoreIdx = -1;
+   for (int i = 0; i < scores.length; i++) {
+     if (scores[i] > maxScore) {
+       maxScore = scores[i];
+       maxScoreIdx = i;
+     }
+   }
+   String className = ImageNetClasses.IMAGENET_CLASSES[maxScoreIdx];
