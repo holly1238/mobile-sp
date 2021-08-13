@@ -97,3 +97,10 @@ transformers. They are available on both iOS and Android:
 -  `iOS demo apps <https://github.com/pytorch/ios-demo-app>`__
 -  `Android demo apps <https://github.com/pytorch/android-demo-app>`__
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Quickstarts
+   
+   quickstarts/androidquickstart
+   quickstarts/iosquickstart
+
