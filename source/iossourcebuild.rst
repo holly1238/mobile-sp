@@ -1,5 +1,5 @@
-Build PyTorch iOS Libraries from Source
-=======================================
+Building PyTorch iOS from Source
+================================
 
 To track the latest updates for iOS, you can build the PyTorch iOS
 libraries from the source code.
