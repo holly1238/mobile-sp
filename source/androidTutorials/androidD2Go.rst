@@ -1,3 +1,6 @@
+Android D2Go
+============
+
 `D2Go <https://github.com/pytorch/android-demo-app/tree/master/D2Go>`__
 demonstrates a Python script that creates the much lighter and much
 faster Facebook `D2Go <https://github.com/facebookresearch/d2go>`__
