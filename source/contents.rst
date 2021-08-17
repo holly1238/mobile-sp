@@ -30,7 +30,7 @@
   :maxdepth: 2
   :caption: Using PyTorch Libraries
   
-  usinglibraries/usingAndriodLibraries
+  usinglibraries/usingAndroidLibraries
   usinglibraries/usingiosLibraries
   
 .. toctree::
@@ -54,10 +54,10 @@
   :maxdepth: 2
   :caption: Backends
   
-  backend/GPUandroid
-  backend/GPUiOS
-  backend/NNAPIandroid
-  backend/coreMLios
+  backends/GPUandroid
+  backends/GPUiOS
+  backends/NNAPIandroid
+  backends/coreMLios
   
 .. toctree::
   :maxdepth: 2
