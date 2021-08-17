@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; PyTorch Mobile .0 documentation</title>
+  <title>Mobile API Docs &mdash; PyTorch Mobile .0 documentation</title>
   
 
   
@@ -29,6 +29,7 @@
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="iOS Video Classification" href="iosTutorials/iosVideoClassification.html" />
   <!-- Google Analytics -->
   
   <!-- End Google Analytics -->
@@ -209,17 +210,89 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Overview</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">PyTorch Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploymentWorkflow.html">Deployment workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quickstart</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="quickstarts/androidquickstart.html">Android Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstarts/iosquickstart.html">iOS Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Build From Source</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="androidsourcebuild.html">Building PyTorch Android from Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iossourcebuild.html">Building PyTorch iOS from Source</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Binary Size Optimization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="selectivebuild/andriodSelectiveBuild.html">Andriod Selective Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectivebuild/iosSelectiveBuild.html">iOS Selective Build</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using PyTorch Libraries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usinglibraries/usingAndroidLibraries.html">Using the PyTorch Android Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usinglibraries/usingiosLibraries.html">Using the PyTorch iOS Libraries</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Model Preparation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modelprep/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelprep/scriptOptimizeMobile.html">Script and Optimize for Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelprep/liteJitInterpreters.html">Lite and Full Jit Interpreters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="performance/bestPractices.html">Pytorch Mobile Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/fuseModules.html">Fuse Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/andriodBenchmark.html">Andriod Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/iosBenchmark.html">iOS Benchmarking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backends</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backends/GPUandroid.html">Using GPU on Andriod (Vulkan Backend)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends/GPUiOS.html">Using GPU on iOS (Metal Backend)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends/NNAPIandroid.html">Convert MobileNetV2 to NNAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends/coreMLios.html">Core ML on iOS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Custom Operators</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="customOperators.html">Andriod Native Application with Custom Operators</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Run Inference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="runInference.html">Operator Compatibility</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Video Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="videos/runtimeAndroid.html">PyTorch Mobile Runtime for Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos/runtimeiOS.html">PyTorch Mobile Runtime for iOS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Android Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidD2Go.html">Android D2Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidImageSegmentation.html">Image Segmentation DeepLabV3 on Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidObjectDetection.html">Android Object Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidNeuralMachineTranslation.html">Android Neural Machine Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidQuestionAnswering.html">Android Question Answering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidVisionTransformer.html">Android Vision Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidSpeechRecognition.html">Android Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidVideoClassification.html">Android Video Classification</a></li>
+</ul>
+<p class="caption"><span class="caption-text">iOS Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosD2Go.html">iOS D2Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosImageSegmentation.html">Image Segmentation DeepLabV3 on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosObjectDetection.html">iOS Object Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosNeuralMachineTranslation.html">iOS Neural Machine Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosQuestionAnswering.html">iOS Question Answering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosVisionTransformer.html">iOS Vision Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosSpeechRecognition.html">iOS Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosVideoClassification.html">iOS Video Classification</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mobile API Docs</a></li>
 </ul>
 
             
@@ -260,7 +333,7 @@
       </li>
 
         
-      <li>&lt;no title&gt;</li>
+      <li>Mobile API Docs</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -292,12 +365,36 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  
+  <div class="section" id="mobile-api-docs">
+<h1>Mobile API Docs<a class="headerlink" href="#mobile-api-docs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="andriod-api-docs">
+<h2>Andriod API Docs<a class="headerlink" href="#andriod-api-docs" title="Permalink to this headline">¶</a></h2>
+<p>You can find more details about the PyTorch Android API in the
+<a class="reference external" href="https://pytorch.org/javadoc/">Javadoc</a>.</p>
+</div>
+<div class="section" id="ios-api-docs">
+<h2>iOS API Docs<a class="headerlink" href="#ios-api-docs" title="Permalink to this headline">¶</a></h2>
+<p>Currently, the iOS framework uses the Pytorch C++ front-end APIs
+directly. The C++ document can be found
+<a class="reference external" href="https://pytorch.org/cppdocs/">here</a>. To learn more about it, we
+recommend exploring the <a class="reference external" href="https://pytorch.org/tutorials/advanced/cpp_frontend.html">C++ front-end
+tutorials</a>
+on PyTorch webpage.</p>
+</div>
+</div>
+
 
              </article>
              
             </div>
             <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="iosTutorials/iosVideoClassification.html" class="btn btn-neutral" title="iOS Video Classification" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
   
 
   
@@ -326,7 +423,12 @@
         <div class="pytorch-content-right" id="pytorch-content-right">
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
-              <ul class="simple">
+              <ul>
+<li><a class="reference internal" href="#">Mobile API Docs</a><ul>
+<li><a class="reference internal" href="#andriod-api-docs">Andriod API Docs</a></li>
+<li><a class="reference internal" href="#ios-api-docs">iOS API Docs</a></li>
+</ul>
+</li>
 </ul>
 
             </div>

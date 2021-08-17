@@ -29,8 +29,6 @@
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Android" href="android.html" />
-    <link rel="prev" title="Operators" href="operators.html" />
   <!-- Google Analytics -->
   
   <!-- End Google Analytics -->
@@ -211,17 +209,89 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">PyTorch Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploymentWorkflow.html">Deployment workflow</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Quickstart</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="quickstarts/androidquickstart.html">Android Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstarts/iosquickstart.html">iOS Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="android.html">Android</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ios.html">iOS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Build From Source</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="androidsourcebuild.html">Building PyTorch Android from Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iossourcebuild.html">Building PyTorch iOS from Source</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Binary Size Optimization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="selectivebuild/andriodSelectiveBuild.html">Andriod Selective Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selectivebuild/iosSelectiveBuild.html">iOS Selective Build</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using PyTorch Libraries</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usinglibraries/usingAndroidLibraries.html">Using the PyTorch Android Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usinglibraries/usingiosLibraries.html">Using the PyTorch iOS Libraries</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Model Preparation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modelprep/quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelprep/scriptOptimizeMobile.html">Script and Optimize for Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelprep/liteJitInterpreters.html">Lite and Full Jit Interpreters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Performance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="performance/bestPractices.html">Pytorch Mobile Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/fuseModules.html">Fuse Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/andriodBenchmark.html">Andriod Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance/iosBenchmark.html">iOS Benchmarking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Backends</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backends/GPUandroid.html">Using GPU on Andriod (Vulkan Backend)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends/GPUiOS.html">Using GPU on iOS (Metal Backend)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends/NNAPIandroid.html">Convert MobileNetV2 to NNAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backends/coreMLios.html">Core ML on iOS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Custom Operators</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="customOperators.html">Andriod Native Application with Custom Operators</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Run Inference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="runInference.html">Operator Compatibility</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Video Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="videos/runtimeAndroid.html">PyTorch Mobile Runtime for Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos/runtimeiOS.html">PyTorch Mobile Runtime for iOS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Android Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidD2Go.html">Android D2Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidImageSegmentation.html">Image Segmentation DeepLabV3 on Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidObjectDetection.html">Android Object Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidNeuralMachineTranslation.html">Android Neural Machine Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidQuestionAnswering.html">Android Question Answering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidVisionTransformer.html">Android Vision Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidSpeechRecognition.html">Android Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="androidTutorials/androidVideoClassification.html">Android Video Classification</a></li>
+</ul>
+<p class="caption"><span class="caption-text">iOS Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosD2Go.html">iOS D2Go</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosImageSegmentation.html">Image Segmentation DeepLabV3 on iOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosObjectDetection.html">iOS Object Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosNeuralMachineTranslation.html">iOS Neural Machine Translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosQuestionAnswering.html">iOS Question Answering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosVisionTransformer.html">iOS Vision Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosSpeechRecognition.html">iOS Speech Recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iosTutorials/iosVideoClassification.html">iOS Video Classification</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Mobile API Docs</a></li>
 </ul>
 
             
@@ -303,15 +373,6 @@
              
             </div>
             <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="android.html" class="btn btn-neutral float-right" title="Android" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
-      
-        <a href="operators.html" class="btn btn-neutral" title="Operators" accesskey="p" rel="prev"><img src="_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
-      
-    </div>
   
 
   
