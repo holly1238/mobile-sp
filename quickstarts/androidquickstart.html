@@ -483,12 +483,14 @@ serialized to file model.</p>
 <a class="reference external" href="https://pytorch.org/docs/stable/vision/models.html">torchvision
 format</a>
 using <code class="docutils literal notranslate"><span class="pre">android.graphics.Bitmap</span></code> as a source.</p>
-<blockquote>
-<div>All pre-trained models expect input images normalized in the same
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All pre-trained models expect input images normalized in the same
 way, i.e. mini-batches of 3-channel RGB images of shape (3 x H x W),
 where H and W are expected to be at least 224. The images have to be
 loaded in to a range of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> and then normalized using
-<code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">[0.485,</span> <span class="pre">0.456,</span> <span class="pre">0.406]</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">=</span> <span class="pre">[0.229,</span> <span class="pre">0.224,</span> <span class="pre">0.225]</span></code></div></blockquote>
+<code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">[0.485,</span> <span class="pre">0.456,</span> <span class="pre">0.406]</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">=</span> <span class="pre">[0.229,</span> <span class="pre">0.224,</span> <span class="pre">0.225]</span></code></p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">inputTensor</span></code>’s shape is <code class="docutils literal notranslate"><span class="pre">1x3xHxW</span></code>, where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are
 bitmap height and width appropriately.</p>
 </div>
