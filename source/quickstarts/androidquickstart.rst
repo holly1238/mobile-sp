@@ -136,6 +136,7 @@ serialized to file model.
 format <https://pytorch.org/docs/stable/vision/models.html>`__
 using ``android.graphics.Bitmap`` as a source.
 
+.. Note::
    All pre-trained models expect input images normalized in the same
    way, i.e. mini-batches of 3-channel RGB images of shape (3 x H x W),
    where H and W are expected to be at least 224. The images have to be
