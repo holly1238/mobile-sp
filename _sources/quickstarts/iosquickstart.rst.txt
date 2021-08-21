@@ -14,16 +14,17 @@ case you don’t, we are going to use a pre-trained image classification
 model - `MobileNet
 v2 <https://pytorch.org/hub/pytorch_vision_mobilenet_v2/>`__, which is
 already packaged in
-`TorchVision <https://pytorch.org/docs/stable/torchvision/index.html>`__.
+`TorchVision <https://pytorch.org/docs/stable/vision/index.html>`__.
 To install it, run the command below.
-
-   We highly recommend following the `Pytorch Github
-   page <https://github.com/pytorch/pytorch>`__ to set up the Python
-   development environment on your local machine.
 
 .. code:: shell
 
    pip install torchvision
+
+.. Note::
+   We highly recommend following the `Pytorch Github
+   page <https://github.com/pytorch/pytorch>`__ to set up the Python
+   development environment on your local machine.
 
 Once we have TorchVision installed successfully, let’s navigate to the
 HelloWorld folder and run ``trace_model.py``. The script contains the
@@ -39,9 +40,8 @@ If everything works well, we should have our model - ``model.pt``
 generated in the ``HelloWorld`` folder. Now copy the model file to our
 application folder ``HelloWorld/model``.
 
-   To find out more details about TorchScript, please visit `tutorials
-   on
-   pytorch.org <https://pytorch.org/tutorials/advanced/cpp_export.html>`__
+.. Note::
+   For more details about TorchScript, see the `TorchScript documentation <https://pytorch.org/docs/stable/jit.html>`__.
 
 Install LibTorch via Cocoapods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
