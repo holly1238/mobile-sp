@@ -3,8 +3,8 @@ Android Quickstart
 
 `HelloWorld <https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp>`__
 is a simple image classification application that demonstrates how to
-use the PyTorch Android API. This application runs TorchScript serialized
-TorchVision pretrained resnet18 model on static image which is packaged
+use the PyTorch Android API. This application runs the TorchScript serialized
+TorchVision pretrained resnet18 model on static images, which is packaged
 inside the app as an android asset.
 
 1. Model Preparation
@@ -23,7 +23,7 @@ To install it, run the command below:
 
 To serialize the model you can use this python
 `script <https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/trace_model.py>`__
-in the root folder of HelloWorld app:
+in the root folder of the HelloWorld app:
 
 ::
 
@@ -38,9 +38,9 @@ in the root folder of HelloWorld app:
    traced_script_module_optimized = optimize_for_mobile(traced_script_module)
    traced_script_module_optimized._save_for_lite_interpreter("app/src/main/assets/model.ptl")
 
-If everything works well, we should have our model - ``model.ptl``
+If everything works well, we should have our model, ``model.ptl``,
 generated in the assets folder of android application. That will be
-packaged inside android application as ``asset`` and can be used on the
+packaged inside the android application as ``asset`` and can be used on the
 device.
 
 For more details about TorchScript, see the `TorchScript documentation <https://pytorch.org/docs/stable/jit.html>`__.
@@ -91,8 +91,8 @@ in build.gradle:
 
 Where ``org.pytorch:pytorch_android`` is the main dependency with
 PyTorch Android API, including libtorch native library for all 4 android
-abis (armeabi-v7a, arm64-v8a, x86, x86_64). Further in this doc you can
-find how to rebuild it only for specific list of android abis.
+abis (armeabi-v7a, arm64-v8a, x86, x86_64). See `Android Selective Build <../selectivebuild/andriodSelectiveBuild.html>`__
+for information about how to rebuild it only for a specific list of android abis.
 
 ``org.pytorch:pytorch_android_torchvision`` is an additional library with
 utility functions for converting ``android.media.Image`` and
