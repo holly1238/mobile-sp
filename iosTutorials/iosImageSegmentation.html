@@ -378,7 +378,7 @@
 <p>In this tutorial, we will provide a step-by-step guide on how to prepare and run the PyTorch DeepLabV3 model on iOS, taking you from the beginning of having a model you may want to use on iOS to the end of having a complete iOS app using the model. We will also cover practical and general tips on how to check if your next favorite pre-trained PyTorch models can run on iOS, and how to avoid pitfalls.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Before going through this tutorial, you should check out <a class="reference external" href="https://pytorch.org/mobile/ios/">PyTorch Mobile for iOS</a> and give the PyTorch iOS <a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld">HelloWorld</a> example app a quick try. This tutorial will go beyond the image classification model, usually the first kind of model deployed on mobile. The complete code repo for this tutorial is available <a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/ImageSegmentation">here</a>.</p>
+<p class="last">Before going through this tutorial, you should give the PyTorch iOS <a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld">HelloWorld</a> example app a quick try. This tutorial will go beyond the image classification model, usually the first kind of model deployed on mobile. The complete code repo for this tutorial is available <a class="reference external" href="https://github.com/pytorch/ios-demo-app/tree/master/ImageSegmentation">here</a>.</p>
 </div>
 </div>
 <div class="section" id="learning-objectives">
@@ -407,7 +407,7 @@
 <p>The first step to deploying a model on iOS is to convert the model into the <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">TorchScript</a> format.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Not all PyTorch models can be converted to TorchScript at this time because a model definition may use language features that are not in TorchScript, which is a subset of Python. See the <a class="reference external" href="../recipes/script_optimized.html">Script and Optimize Recipe</a> for more details.</p>
+<p class="last">Not all PyTorch models can be converted to TorchScript at this time because a model definition may use language features that are not in TorchScript, which is a subset of Python. See the <a class="reference external" href="../modelprep/scriptOptimizeMobile.html">Script and Optimize Recipe</a> for more details.</p>
 </div>
 <p>Simply run the script below to generate the scripted model <cite>deeplabv3_scripted.pt</cite>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -564,8 +564,8 @@
 <p>The UI for this app is also similar to that for HelloWorld, except that you do not need the <cite>UITextView</cite> to show the image classification result. You can also add two buttons <cite>Segment</cite> and <cite>Restart</cite> as shown in the code repo to run the model inference and to show back the original image after the segmentation result is shown.</p>
 <p>The last step before we can run the app is to connect all the pieces together. Modify the <cite>ViewController.swift</cite> file to use the <cite>predictImage</cite>, which is refactored and changed to <cite>segmentImage</cite> in the repo, and helper functions you built as shown in the example code in the repo in <cite>ViewController.swift</cite>. Connect the buttons to the actions and you should be good to go.</p>
 <p>Now when you run the app on an iOS simulator or an actual iOS device, you will see the following screens:</p>
-<a class="reference internal image-reference" href="_static/img/deeplabv3_ios.png"><img alt="_static/img/deeplabv3_ios.png" src="_static/img/deeplabv3_ios.png" style="width: 300px;" /></a>
-<a class="reference internal image-reference" href="_static/img/deeplabv3_ios2.png"><img alt="_static/img/deeplabv3_ios2.png" src="_static/img/deeplabv3_ios2.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/deeplabv3_ios.png"><img alt="../_images/deeplabv3_ios.png" src="../_images/deeplabv3_ios.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/deeplabv3_ios2.png"><img alt="../_images/deeplabv3_ios2.png" src="../_images/deeplabv3_ios2.png" style="width: 300px;" /></a>
 </div>
 </div>
 <div class="section" id="recap">
@@ -576,7 +576,6 @@
 <div class="section" id="learn-more">
 <h2>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://pytorch.org/mobile">PyTorch Mobile site</a></li>
 <li><a class="reference external" href="https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101">DeepLabV3 model</a></li>
 <li><a class="reference external" href="https://arxiv.org/pdf/1706.05587.pdf">DeepLabV3 paper</a></li>
 </ol>
