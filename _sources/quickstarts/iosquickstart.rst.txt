@@ -11,7 +11,7 @@ Model Preparation
 Let’s start with model preparation. If you are familiar with PyTorch,
 you probably should already know how to train and save your model. In
 case you don’t, we are going to use a pre-trained image classification
-model - `MobileNet
+model, `MobileNet
 v2 <https://pytorch.org/hub/pytorch_vision_mobilenet_v2/>`__, which is
 already packaged in
 `TorchVision <https://pytorch.org/docs/stable/vision/index.html>`__.
@@ -23,20 +23,20 @@ To install it, run the command below.
 
 .. Note::
    We highly recommend following the `Pytorch Github
-   page <https://github.com/pytorch/pytorch>`__ to set up the Python
+   page <https://github.com/pytorch/pytorch>`__ to set up the PyTorch
    development environment on your local machine.
 
 Once we have TorchVision installed successfully, let’s navigate to the
 HelloWorld folder and run ``trace_model.py``. The script contains the
-code of tracing and saving a `torchscript
-model <https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html>`__
+code of tracing and saving a `TorchScript
+model <https://github.com/pytorch/ios-demo-app/blob/master/HelloWorld/trace_model.py>`__
 that can be run on mobile devices.
 
 .. code:: shell
 
    python trace_model.py
 
-If everything works well, we should have our model - ``model.pt``
+If everything works well, we should have our model, ``model.pt``,
 generated in the ``HelloWorld`` folder. Now copy the model file to our
 application folder ``HelloWorld/model``.
 
@@ -103,7 +103,7 @@ TorchScript Module
 ^^^^^^^^^^^^^^^^^^
 
 Now that we have preprocessed our input data and we have a pre-trained
-TorchScript model, the next step is to use them to run predication. To
+TorchScript model, the next step is to use them to run prediction. To
 do that, we’ll first load our model into the application.
 
 .. code:: swift

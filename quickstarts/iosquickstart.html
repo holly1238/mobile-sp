@@ -378,7 +378,7 @@ written in Swift and uses Objective-C as a bridge.</p>
 <p>Let’s start with model preparation. If you are familiar with PyTorch,
 you probably should already know how to train and save your model. In
 case you don’t, we are going to use a pre-trained image classification
-model - <a class="reference external" href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/">MobileNet
+model, <a class="reference external" href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/">MobileNet
 v2</a>, which is
 already packaged in
 <a class="reference external" href="https://pytorch.org/docs/stable/vision/index.html">TorchVision</a>.
@@ -389,18 +389,18 @@ To install it, run the command below.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">We highly recommend following the <a class="reference external" href="https://github.com/pytorch/pytorch">Pytorch Github
-page</a> to set up the Python
+page</a> to set up the PyTorch
 development environment on your local machine.</p>
 </div>
 <p>Once we have TorchVision installed successfully, let’s navigate to the
 HelloWorld folder and run <code class="docutils literal notranslate"><span class="pre">trace_model.py</span></code>. The script contains the
-code of tracing and saving a <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">torchscript
+code of tracing and saving a <a class="reference external" href="https://github.com/pytorch/ios-demo-app/blob/master/HelloWorld/trace_model.py">TorchScript
 model</a>
 that can be run on mobile devices.</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">trace_model</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>If everything works well, we should have our model - <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>
+<p>If everything works well, we should have our model, <code class="docutils literal notranslate"><span class="pre">model.pt</span></code>,
 generated in the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> folder. Now copy the model file to our
 application folder <code class="docutils literal notranslate"><span class="pre">HelloWorld/model</span></code>.</p>
 <div class="admonition note">
@@ -457,7 +457,7 @@ has to be loaded in to a range of <code class="docutils literal notranslate"><sp
 <div class="section" id="torchscript-module">
 <h3>TorchScript Module<a class="headerlink" href="#torchscript-module" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have preprocessed our input data and we have a pre-trained
-TorchScript model, the next step is to use them to run predication. To
+TorchScript model, the next step is to use them to run prediction. To
 do that, we’ll first load our model into the application.</p>
 <div class="code swift highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">private</span> <span class="n">lazy</span> <span class="n">var</span> <span class="n">module</span><span class="p">:</span> <span class="n">TorchModule</span> <span class="o">=</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">let</span> <span class="n">filePath</span> <span class="o">=</span> <span class="n">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">path</span><span class="p">(</span><span class="n">forResource</span><span class="p">:</span> <span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="n">ofType</span><span class="p">:</span> <span class="s2">&quot;pt&quot;</span><span class="p">),</span>
