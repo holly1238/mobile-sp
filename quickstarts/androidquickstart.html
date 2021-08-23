@@ -372,8 +372,8 @@
 <h1>Android Quickstart<a class="headerlink" href="#android-quickstart" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp">HelloWorld</a>
 is a simple image classification application that demonstrates how to
-use the PyTorch Android API. This application runs TorchScript serialized
-TorchVision pretrained resnet18 model on static image which is packaged
+use the PyTorch Android API. This application runs the TorchScript serialized
+TorchVision pretrained resnet18 model on static images, which is packaged
 inside the app as an android asset.</p>
 <div class="section" id="model-preparation">
 <h2>1. Model Preparation<a class="headerlink" href="#model-preparation" title="Permalink to this headline">¶</a></h2>
@@ -388,7 +388,7 @@ To install it, run the command below:</p>
 </div>
 <p>To serialize the model you can use this python
 <a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/trace_model.py">script</a>
-in the root folder of HelloWorld app:</p>
+in the root folder of the HelloWorld app:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torchvision</span>
 <span class="kn">from</span> <span class="nn">torch.utils.mobile_optimizer</span> <span class="k">import</span> <span class="n">optimize_for_mobile</span>
@@ -401,9 +401,9 @@ in the root folder of HelloWorld app:</p>
 <span class="n">traced_script_module_optimized</span><span class="o">.</span><span class="n">_save_for_lite_interpreter</span><span class="p">(</span><span class="s2">&quot;app/src/main/assets/model.ptl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If everything works well, we should have our model - <code class="docutils literal notranslate"><span class="pre">model.ptl</span></code>
+<p>If everything works well, we should have our model, <code class="docutils literal notranslate"><span class="pre">model.ptl</span></code>,
 generated in the assets folder of android application. That will be
-packaged inside android application as <code class="docutils literal notranslate"><span class="pre">asset</span></code> and can be used on the
+packaged inside the android application as <code class="docutils literal notranslate"><span class="pre">asset</span></code> and can be used on the
 device.</p>
 <p>For more details about TorchScript, see the <a class="reference external" href="https://pytorch.org/docs/stable/jit.html">TorchScript documentation</a>.</p>
 </div>
@@ -446,8 +446,8 @@ in build.gradle:</p>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">org.pytorch:pytorch_android</span></code> is the main dependency with
 PyTorch Android API, including libtorch native library for all 4 android
-abis (armeabi-v7a, arm64-v8a, x86, x86_64). Further in this doc you can
-find how to rebuild it only for specific list of android abis.</p>
+abis (armeabi-v7a, arm64-v8a, x86, x86_64). See <a class="reference external" href="../selectivebuild/andriodSelectiveBuild.html">Android Selective Build</a>
+for information about how to rebuild it only for a specific list of android abis.</p>
 <p><code class="docutils literal notranslate"><span class="pre">org.pytorch:pytorch_android_torchvision</span></code> is an additional library with
 utility functions for converting <code class="docutils literal notranslate"><span class="pre">android.media.Image</span></code> and
 <code class="docutils literal notranslate"><span class="pre">android.graphics.Bitmap</span></code> to tensors.</p>
