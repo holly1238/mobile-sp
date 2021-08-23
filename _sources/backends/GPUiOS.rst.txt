@@ -57,13 +57,13 @@ Those are all the ops we need to run the mobilenetv2 model on iOS GPU. Cool! Now
 Use C++ APIs
 ---------------------
 
-In this section, we'll be using the `HelloWorld example <https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld-Metal>`_ to demonstrate how to use the C++ APIs. The first thing we need to do is to build a custom LibTorch from Source. Make sure you have deleted the **build** folder from the previous step in PyTorch root directory. Then run the command below
+In this section, we'll be using the `HelloWorld-Metal example <https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld-Metal>`_ to demonstrate how to use the C++ APIs. The first thing we need to do is to build a custom LibTorch from Source. Make sure you have deleted the **build** folder from the previous step in PyTorch root directory. Then run the command below
 
 .. code:: shell
 
     IOS_ARCH=arm64 USE_PYTORCH_METAL=1 ./scripts/build_ios.sh
 
-Note ``IOS_ARCH`` tells the script to build a arm64 version of Libtorch. This is because in PyTorch, Metal is only available for the iOS devices that support the Apple A9 chip or above. Once the build finished, follow the `Building PyTorch iOS From Source <..mobile-sp/iossourcebuild.html>`_ section from the iOS tutorial to setup the XCode settings properly. Don't forget to copy the `./mobilenetv2_metal.pt` to your XCode project and modify the model file path accordingly.
+Note ``IOS_ARCH`` tells the script to build a arm64 version of Libtorch. This is because in PyTorch, Metal is only available for the iOS devices that support the Apple A9 chip or above. Once the build finished, follow the `Building PyTorch iOS From Source <../iossourcebuild.html>`_ section from the iOS tutorial to setup the XCode settings properly. Don't forget to copy the `./mobilenetv2_metal.pt` to your XCode project and modify the model file path accordingly.
 
 Next we need to make some changes in ``TorchModule.mm``
 
