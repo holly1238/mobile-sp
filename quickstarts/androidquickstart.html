@@ -514,21 +514,20 @@ array of floats with scores for every image net class.</p>
 <p>After that we just find index with maximum score and retrieve predicted
 class name from <code class="docutils literal notranslate"><span class="pre">ImageNetClasses.IMAGENET_CLASSES</span></code> array that contains
 all ImageNet classes.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nb">float</span> <span class="n">maxScore</span> <span class="o">=</span> <span class="o">-</span><span class="n">Float</span><span class="o">.</span><span class="n">MAX_VALUE</span><span class="p">;</span>
-  <span class="nb">int</span> <span class="n">maxScoreIdx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">scores</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">maxScore</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">maxScore</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-      <span class="n">maxScoreIdx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">maxScore</span> <span class="o">=</span> <span class="o">-</span><span class="n">Float</span><span class="o">.</span><span class="n">MAX_VALUE</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">maxScoreIdx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">scores</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">maxScore</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">maxScore</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="n">maxScoreIdx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="n">String</span> <span class="n">className</span> <span class="o">=</span> <span class="n">ImageNetClasses</span><span class="o">.</span><span class="n">IMAGENET_CLASSES</span><span class="p">[</span><span class="n">maxScoreIdx</span><span class="p">];</span>
-
-
-<span class="n">PyTorch</span> <span class="n">Demo</span> <span class="n">Application</span>
+<span class="p">}</span>
+<span class="n">String</span> <span class="n">className</span> <span class="o">=</span> <span class="n">ImageNetClasses</span><span class="o">.</span><span class="n">IMAGENET_CLASSES</span><span class="p">[</span><span class="n">maxScoreIdx</span><span class="p">];</span>
 </pre></div>
 </div>
-<hr class="docutils" />
+</div>
+<div class="section" id="pytorch-demo-application">
+<h2>PyTorch Demo Application<a class="headerlink" href="#pytorch-demo-application" title="Permalink to this headline">¶</a></h2>
 <p>We have also created another more complex PyTorch Android demo
 application that does image classification from camera output and text
 classification in the <a class="reference external" href="https://github.com/pytorch/android-demo-app/tree/master/PyTorchDemoApp">same github
@@ -536,7 +535,7 @@ repo</a>.</p>
 <p>To get device camera output it uses <a class="reference external" href="https://developer.android.com/training/camerax">Android CameraX
 API</a>. All the logic
 that works with CameraX is separated to
-<code class="docutils literal notranslate"><span class="pre">`org.pytorch.demo.vision.AbstractCameraXActivity</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java">https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java</a>&gt;`__
+<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java">org.pytorch.demo.vision.AbstractCameraXActivity</a>
 class.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">setupCameraX</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">final</span> <span class="n">PreviewConfig</span> <span class="n">previewConfig</span> <span class="o">=</span> <span class="n">new</span> <span class="n">PreviewConfig</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">();</span>
@@ -564,7 +563,7 @@ class.</p>
 <p>Where the <code class="docutils literal notranslate"><span class="pre">analyzeImage</span></code> method process the camera output,
 <code class="docutils literal notranslate"><span class="pre">android.media.Image</span></code>.</p>
 <p>It uses the aforementioned
-<code class="docutils literal notranslate"><span class="pre">`TensorImageUtils.imageYUV420CenterCropToFloat32Tensor</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90">https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90</a>&gt;`__
+<a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90">TensorImageUtils.imageYUV420CenterCropToFloat32Tensor</a>
 method to convert <code class="docutils literal notranslate"><span class="pre">android.media.Image</span></code> in <code class="docutils literal notranslate"><span class="pre">YUV420</span></code> format to input
 tensor.</p>
 <p>After getting predicted scores from the model it finds top K classes
@@ -574,7 +573,7 @@ with the highest scores and shows on the UI.</p>
 <h2>Language Processing Example<a class="headerlink" href="#language-processing-example" title="Permalink to this headline">¶</a></h2>
 <p>Another example is natural language processing, based on an LSTM model,
 trained on a reddit comments dataset. The logic happens in
-<code class="docutils literal notranslate"><span class="pre">`TextClassificattionActivity</span></code> &lt;<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java">https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java</a>&gt;`__.</p>
+<a class="reference external" href="https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java">TextClassificattionActivity</a>.</p>
 <p>Result class names are packaged inside the TorchScript model and
 initialized just after initial module initialization. The module has a
 <code class="docutils literal notranslate"><span class="pre">get_classes</span></code> method that returns <code class="docutils literal notranslate"><span class="pre">List[str]</span></code>, which can be called
@@ -663,6 +662,7 @@ highest scores.</p>
 <li><a class="reference internal" href="#preparing-input">6. Preparing Input</a></li>
 <li><a class="reference internal" href="#run-inference">7. Run Inference</a></li>
 <li><a class="reference internal" href="#processing-results">8. Processing results</a></li>
+<li><a class="reference internal" href="#pytorch-demo-application">PyTorch Demo Application</a></li>
 <li><a class="reference internal" href="#language-processing-example">Language Processing Example</a></li>
 </ul>
 </li>
