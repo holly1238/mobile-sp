@@ -82,6 +82,7 @@
   :maxdepth: 2
   :caption: Android Tutorials
   
+  All Android Demo Apps <https://github.com/pytorch/android-demo-app>
   androidTutorials/androidD2Go
   androidTutorials/androidImageSegmentation
   androidTutorials/androidObjectDetection
@@ -95,6 +96,7 @@
   :maxdepth: 2
   :caption: iOS Tutorials
   
+  All iOS Demo Apps <https://github.com/pytorch/ios-demo-app>
   iosTutorials/iosD2Go
   iosTutorials/iosImageSegmentation
   iosTutorials/iosObjectDetection
