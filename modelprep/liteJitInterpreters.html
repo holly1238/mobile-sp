@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Android PyTorch Jit Interpreter &mdash; PyTorch Mobile .0 documentation</title>
+  <title>PyTorch Lite and Jit Interpreters &mdash; PyTorch Mobile .0 documentation</title>
   
 
   
@@ -240,8 +240,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quantization.html">Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scriptOptimizeMobile.html">Script and Optimize for Mobile</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Android PyTorch Jit Interpreter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ios-pytorch-jit-interpreter">iOS PyTorch Jit Interpreter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyTorch Lite and Jit Interpreters</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Performance</span></p>
 <ul>
@@ -337,7 +336,7 @@
       </li>
 
         
-      <li>Android PyTorch Jit Interpreter</li>
+      <li>PyTorch Lite and Jit Interpreters</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -369,8 +368,10 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <div class="section" id="android-pytorch-jit-interpreter">
-<h1>Android PyTorch Jit Interpreter<a class="headerlink" href="#android-pytorch-jit-interpreter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pytorch-lite-and-jit-interpreters">
+<h1>PyTorch Lite and Jit Interpreters<a class="headerlink" href="#pytorch-lite-and-jit-interpreters" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="android-pytorch-jit-interpreter">
+<h2>Android PyTorch Jit Interpreter<a class="headerlink" href="#android-pytorch-jit-interpreter" title="Permalink to this headline">¶</a></h2>
 <p>PyTorch JIT interpreter is the default interpreter before 1.9 (a version
 of our PyTorch interpreter that is not as size-efficient). It will still
 be supported in 1.9, and can be used via <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code>:</p>
@@ -386,12 +387,13 @@ be supported in 1.9, and can be used via <code class="docutils literal notransla
 </div>
 </div>
 <div class="section" id="ios-pytorch-jit-interpreter">
-<h1>iOS PyTorch Jit Interpreter<a class="headerlink" href="#ios-pytorch-jit-interpreter" title="Permalink to this headline">¶</a></h1>
+<h2>iOS PyTorch Jit Interpreter<a class="headerlink" href="#ios-pytorch-jit-interpreter" title="Permalink to this headline">¶</a></h2>
 <p>PyTorch JIT interpreter is the default interpreter before 1.9 (a version
 of our PyTorch interpreter that is not as size-efficient). It will still
 be supported in 1.9, and can be used in CocoaPods:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pod</span> <span class="s1">&#39;LibTorch&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt;1.9.0&#39;</span>
 </pre></div>
+</div>
 </div>
 </div>
 
@@ -438,8 +440,11 @@ be supported in 1.9, and can be used in CocoaPods:</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Android PyTorch Jit Interpreter</a></li>
+<li><a class="reference internal" href="#">PyTorch Lite and Jit Interpreters</a><ul>
+<li><a class="reference internal" href="#android-pytorch-jit-interpreter">Android PyTorch Jit Interpreter</a></li>
 <li><a class="reference internal" href="#ios-pytorch-jit-interpreter">iOS PyTorch Jit Interpreter</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
