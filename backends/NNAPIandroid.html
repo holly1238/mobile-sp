@@ -509,7 +509,7 @@ Please create that directory first.</p>
 <div class="section" id="running-benchmarks">
 <h2>Running Benchmarks<a class="headerlink" href="#running-benchmarks" title="Permalink to this headline">¶</a></h2>
 <p>Now that the models are ready, we can benchmark them on our Android devices.
-See <a class="reference external" href="https://pytorch.org/tutorials/recipes/mobile_perf.html#android-benchmarking-setup">our performance recipe</a> for details.
+See <a class="reference external" href="../performance/andriodBenchmark.html">Android Benchmarking</a> for details.
 The best-performing models are likely to be the “fully-quantized” models:
 <code class="docutils literal notranslate"><span class="pre">mobilenetv2-quant_full-cpu.pt</span></code> and <code class="docutils literal notranslate"><span class="pre">mobilenetv2-quant_full-nnapi.pt</span></code>.</p>
 <p>Because these models have bundled inputs, we can run the benchmark as follows:</p>
@@ -526,14 +526,14 @@ by passing <code class="docutils literal notranslate"><span class="pre">--use_ca
 <h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
 <p>The converted models are ordinary TorchScript models.
 You can use them in your app just like any other PyTorch model.
-See <a class="reference external" href="https://pytorch.org/mobile/android/">https://pytorch.org/mobile/android/</a>
+See <a class="reference external" href="../quickstarts/androidquickstart.html">Android Quickstarts</a>
 for an introduction to using PyTorch on Android.</p>
 </div>
 <div class="section" id="learn-more">
 <h2>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Learn more about optimization in our
-<a class="reference external" href="https://pytorch.org/tutorials/recipes/mobile_perf.html">Mobile Performance Recipe</a></li>
+<li>Learn more about optimization in <a class="reference external" href="../performance/bestPractices.html">_PyTorch Mobile Performance</a> and
+<a class="reference external" href="../performance/andriodBenchmark.html">Android Benchmarking</a></li>
 <li><a class="reference external" href="https://pytorch.org/hub/pytorch_vision_mobilenet_v2/">MobileNetV2</a> from torchvision</li>
 <li>Information about <a class="reference external" href="https://developer.android.com/ndk/guides/neuralnetworks">NNAPI</a></li>
 </ul>
