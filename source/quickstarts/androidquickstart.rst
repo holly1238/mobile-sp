@@ -182,8 +182,8 @@ all ImageNet classes.
    String className = ImageNetClasses.IMAGENET_CLASSES[maxScoreIdx];
    
    
- PyTorch Demo Application
-------------------------
+PyTorch Demo Application
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 We have also created another more complex PyTorch Android demo
 application that does image classification from camera output and text
@@ -193,7 +193,7 @@ repo <https://github.com/pytorch/android-demo-app/tree/master/PyTorchDemoApp>`__
 To get device camera output it uses `Android CameraX
 API <https://developer.android.com/training/camerax>`__. All the logic
 that works with CameraX is separated to
-```org.pytorch.demo.vision.AbstractCameraXActivity`` <https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java>`__
+`org.pytorch.demo.vision.AbstractCameraXActivity <https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/vision/AbstractCameraXActivity.java>`__
 class.
 
 ::
@@ -224,7 +224,7 @@ Where the ``analyzeImage`` method process the camera output,
 ``android.media.Image``.
 
 It uses the aforementioned
-```TensorImageUtils.imageYUV420CenterCropToFloat32Tensor`` <https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90>`__
+`TensorImageUtils.imageYUV420CenterCropToFloat32Tensor <https://github.com/pytorch/pytorch/blob/master/android/pytorch_android_torchvision/src/main/java/org/pytorch/torchvision/TensorImageUtils.java#L90>`__
 method to convert ``android.media.Image`` in ``YUV420`` format to input
 tensor.
 
@@ -236,7 +236,7 @@ Language Processing Example
 
 Another example is natural language processing, based on an LSTM model,
 trained on a reddit comments dataset. The logic happens in
-```TextClassificattionActivity`` <https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java>`__.
+`TextClassificattionActivity <https://github.com/pytorch/android-demo-app/blob/master/PyTorchDemoApp/app/src/main/java/org/pytorch/demo/nlp/TextClassificationActivity.java>`__.
 
 Result class names are packaged inside the TorchScript model and
 initialized just after initial module initialization. The module has a
