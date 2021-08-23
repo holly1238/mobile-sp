@@ -373,14 +373,11 @@ You can now build the PyTorch library that only contains the operators that are 
 model. To do that, follow the steps below:</p>
 <p>1. Verify your PyTorch version is 1.4.0 or above. You can do that by
 checking the value of <code class="docutils literal notranslate"><span class="pre">torch.__version__</span></code>.</p>
-<ol class="arabic simple" start="2">
-<li>Prepare the list of operators.</li>
-</ol>
-<p>A list of operators of your serialized torchscript model can be prepared
+<p>2. Prepare the list of operators. A list of operators of your serialized torchscript model can be prepared
 in yaml format using python api function <code class="docutils literal notranslate"><span class="pre">torch.jit.export_opnames()</span></code>.
 To dump the operators in your model, say <code class="docutils literal notranslate"><span class="pre">MobileNetV2</span></code>, run the
 following lines of Python code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dump list of operators used by MobileNetV2:</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dump list of operators used by MobileNetV2:</span>
 <span class="kn">import</span> <span class="nn">torch</span><span class="o">,</span> <span class="nn">yaml</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;MobileNetV2.pt&#39;</span><span class="p">)</span>
 <span class="n">ops</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">export_opnames</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -388,10 +385,7 @@ following lines of Python code:</p>
     <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ops</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li>Building PyTorch Android with prepared operators list.</li>
-</ol>
-<p>To build PyTorch Android with the prepared yaml list of operators,
+<p>3. Build PyTorch Android with prepared operators list. To build PyTorch Android with the prepared yaml list of operators,
 specify it in the environment variable <code class="docutils literal notranslate"><span class="pre">SELECTED_OP_LIST</span></code>. Also, in the
 arguments, specify which Android ABIs it should build; by default it
 builds all 4 Android ABIs.</p>
