@@ -396,7 +396,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">torchscript_model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">script</span><span class="p">(</span><span class="n">model_quantized</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>But if a model has some flow control, then <cite>trace</cite> won’t correctly record all the possible traces. Take some code snippet of an example model definition from <a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">here</a> for example:</p>
+<p>But if a model has some flow control, then <cite>trace</cite> won’t correctly record all the possible traces. Take some code snippet of an example model definition from the
+<a class="reference external" href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">Introduction to TorchScript</a> tutorial:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 
 <span class="k">class</span> <span class="nc">MyDecisionGate</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -436,7 +437,7 @@ def forward(self,
   <span class="k">return</span> <span class="n">_1</span>
 </pre></div>
 </div>
-<p>This is another example of using <cite>trace</cite> and <cite>script</cite> - it converts the model trained in the PyTorch tutorial <a class="reference external" href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html">NLP FROM SCRATCH: TRANSLATION WITH A SEQUENCE TO SEQUENCE NETWORK AND ATTENTION</a>:</p>
+<p>This is another example of using <cite>trace</cite> and <cite>script</cite> - it converts the model trained in the PyTorch tutorial <a class="reference external" href="https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html">NLP From Scratch: Translation with a Sequence to Sequence Network and Attention</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">encoder</span> <span class="o">=</span> <span class="n">EncoderRNN</span><span class="p">(</span><span class="n">input_lang</span><span class="o">.</span><span class="n">n_words</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
 <span class="n">decoder</span> <span class="o">=</span> <span class="n">AttnDecoderRNN</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_lang</span><span class="o">.</span><span class="n">n_words</span><span class="p">)</span>
 
@@ -458,7 +459,7 @@ def forward(self,
 <span class="n">scripted_decoder</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">jit</span><span class="o">.</span><span class="n">script</span><span class="p">(</span><span class="n">decoder</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>So is it true that one can simply always use the <cite>script</cite> call and the model is converted to TorchScript? The answer is no, because TorchScript is actually a subset of Python and to make <cite>script</cite> work, the PyTorch model definition must only use the language features of that TorchScript subset of Python. <a class="reference external" href="https://pytorch.org/docs/master/jit_language_reference.html#language-reference">TorchScript Language Reference</a> covers all the details of what is supported in TorchScript. Below we will describe some of the common errors when using the <cite>script</cite> method.</p>
+<p>So is it true that one can simply always use the <cite>script</cite> call and the model is converted to TorchScript? The answer is no, because TorchScript is actually a subset of Python and to make <cite>script</cite> work, the PyTorch model definition must only use the language features of that TorchScript subset of Python. The <a class="reference external" href="https://pytorch.org/docs/stable/jit_language_reference_v2">TorchScript Language Reference</a> covers all the details of what is supported in TorchScript. Below we will describe some of the common errors when using the <cite>script</cite> method.</p>
 </div>
 </div>
 <div class="section" id="fix-common-errors-when-using-the-script-method">
@@ -491,7 +492,7 @@ def forward(self,
 </div>
 <div class="section" id="runtimeerror-all-inputs-of-range-must-be-found-tensor-inferred-in-argument">
 <h3>3. RuntimeError <cite>all inputs of range must be ‘…’, found Tensor (inferred) in argument</cite><a class="headerlink" href="#runtimeerror-all-inputs-of-range-must-be-found-tensor-inferred-in-argument" title="Permalink to this headline">¶</a></h3>
-<p>The error message continues with: <cite>add type definitions for each of the module’s forward method arguments. Because all parameters to a TorchScript function are of the `torch.Tensor</cite> type by default, you need to specifically declare the type for each parameter that is not of type ‘Tensor’. For a complete list of TorchScript-supported types, see <a class="reference external" href="https://pytorch.org/docs/master/jit_language_reference.html#supported-type">here</a>.</p>
+<p>The error message continues with: <cite>add type definitions for each of the module’s forward method arguments. Because all parameters to a TorchScript function are of the `torch.Tensor</cite> type by default, you need to specifically declare the type for each parameter that is not of type ‘Tensor’. For a complete list of TorchScript-supported types, see <a class="reference external" href="https://pytorch.org/docs/stable/jit_language_reference_v2.html#id1">here</a>.</p>
 <p>For example, the <cite>GreedySearchDecoder</cite>’s <cite>forward</cite> method signature needs to be changed from:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_seq</span><span class="p">,</span> <span class="n">input_length</span><span class="p">,</span> <span class="n">max_length</span><span class="p">):</span>
 </pre></div>
@@ -525,7 +526,7 @@ def forward(self,
 <div class="section" id="learn-more">
 <h2>Learn More<a class="headerlink" href="#learn-more" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The official <a class="reference external" href="https://pytorch.org/docs/stable/jit_language_reference.html">TorchScript Language Reference</a>.</li>
+<li>The official <a class="reference external" href="https://pytorch.org/docs/stable/jit_language_reference_v2.html">TorchScript Language Reference</a>.</li>
 <li>The <cite>torch.utils.mobile_optimizer</cite> <a class="reference external" href="https://pytorch.org/docs/stable/mobile_optimizer.html">API documentation</a>.</li>
 </ol>
 </div>

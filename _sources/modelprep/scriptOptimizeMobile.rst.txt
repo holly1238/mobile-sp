@@ -40,7 +40,8 @@ For the example above, calling `script` below makes no difference:
 
     torchscript_model = torch.jit.script(model_quantized)
 
-But if a model has some flow control, then `trace` won't correctly record all the possible traces. Take some code snippet of an example model definition from `here <https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html>`_ for example:
+But if a model has some flow control, then `trace` won't correctly record all the possible traces. Take some code snippet of an example model definition from the
+`Introduction to TorchScript <https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html>`_ tutorial:
 
 ::
 
@@ -90,7 +91,7 @@ The scripted model as shown by the `print` result below will be covering all pos
       return _1
 
 
-This is another example of using `trace` and `script` - it converts the model trained in the PyTorch tutorial `NLP FROM SCRATCH: TRANSLATION WITH A SEQUENCE TO SEQUENCE NETWORK AND ATTENTION <https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html>`_:
+This is another example of using `trace` and `script` - it converts the model trained in the PyTorch tutorial `NLP From Scratch: Translation with a Sequence to Sequence Network and Attention <https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html>`_:
 
 ::
 
@@ -114,7 +115,7 @@ This is another example of using `trace` and `script` - it converts the model tr
     scripted_encoder = torch.jit.script(encoder)
     scripted_decoder = torch.jit.script(decoder)
 
-So is it true that one can simply always use the `script` call and the model is converted to TorchScript? The answer is no, because TorchScript is actually a subset of Python and to make `script` work, the PyTorch model definition must only use the language features of that TorchScript subset of Python. `TorchScript Language Reference <https://pytorch.org/docs/master/jit_language_reference.html#language-reference>`_ covers all the details of what is supported in TorchScript. Below we will describe some of the common errors when using the `script` method.
+So is it true that one can simply always use the `script` call and the model is converted to TorchScript? The answer is no, because TorchScript is actually a subset of Python and to make `script` work, the PyTorch model definition must only use the language features of that TorchScript subset of Python. The `TorchScript Language Reference <https://pytorch.org/docs/stable/jit_language_reference_v2>`_ covers all the details of what is supported in TorchScript. Below we will describe some of the common errors when using the `script` method.
 
 
 Fix Common Errors When Using the `script` Method
@@ -161,7 +162,7 @@ and referred to as `self._device` and `self._SOS_token` instead of `device` and 
 3. RuntimeError `all inputs of range must be '...', found Tensor (inferred) in argument`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The error message continues with: `add type definitions for each of the module's forward method arguments. Because all parameters to a TorchScript function are of the `torch.Tensor` type by default, you need to specifically declare the type for each parameter that is not of type 'Tensor'. For a complete list of TorchScript-supported types, see `here <https://pytorch.org/docs/master/jit_language_reference.html#supported-type>`_.
+The error message continues with: `add type definitions for each of the module's forward method arguments. Because all parameters to a TorchScript function are of the `torch.Tensor` type by default, you need to specifically declare the type for each parameter that is not of type 'Tensor'. For a complete list of TorchScript-supported types, see `here <https://pytorch.org/docs/stable/jit_language_reference_v2.html#id1>`_.
 
 For example, the `GreedySearchDecoder`'s `forward` method signature needs to be changed from:
 
@@ -207,5 +208,5 @@ By default, `optimize_for_mobile` will perform the following types of optimizati
 
 Learn More
 -----------------
-1. The official `TorchScript Language Reference <https://pytorch.org/docs/stable/jit_language_reference.html>`_.
+1. The official `TorchScript Language Reference <https://pytorch.org/docs/stable/jit_language_reference_v2.html>`_.
 2. The `torch.utils.mobile_optimizer` `API documentation <https://pytorch.org/docs/stable/mobile_optimizer.html>`_.
