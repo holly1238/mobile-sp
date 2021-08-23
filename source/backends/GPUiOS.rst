@@ -57,13 +57,13 @@ Those are all the ops we need to run the mobilenetv2 model on iOS GPU. Cool! Now
 Use C++ APIs
 ---------------------
 
-In this section, we'll be using the `HelloWorld example <https://github.com/pytorch/ios-demo-app>`_ to demonstrate how to use the C++ APIs. The first thing we need to do is to build a custom LibTorch from Source. Make sure you have deleted the **build** folder from the previous step in PyTorch root directory. Then run the command below
+In this section, we'll be using the `HelloWorld example <https://github.com/pytorch/ios-demo-app/tree/master/HelloWorld-Metal>`_ to demonstrate how to use the C++ APIs. The first thing we need to do is to build a custom LibTorch from Source. Make sure you have deleted the **build** folder from the previous step in PyTorch root directory. Then run the command below
 
 .. code:: shell
 
     IOS_ARCH=arm64 USE_PYTORCH_METAL=1 ./scripts/build_ios.sh
 
-Note ``IOS_ARCH`` tells the script to build a arm64 version of Libtorch. This is because in PyTorch, Metal is only available for the iOS devices that support the Apple A9 chip or above. Once the build finished, follow the `Build PyTorch iOS libraries from source <https://pytorch.org/mobile/ios/#build-pytorch-ios-libraries-from-source>`_ section from the iOS tutorial to setup the XCode settings properly. Don't forget to copy the `./mobilenetv2_metal.pt` to your XCode project and modify the model file path accordingly.
+Note ``IOS_ARCH`` tells the script to build a arm64 version of Libtorch. This is because in PyTorch, Metal is only available for the iOS devices that support the Apple A9 chip or above. Once the build finished, follow the `Building PyTorch iOS From Source <..mobile-sp/iossourcebuild.html>`_ section from the iOS tutorial to setup the XCode settings properly. Don't forget to copy the `./mobilenetv2_metal.pt` to your XCode project and modify the model file path accordingly.
 
 Next we need to make some changes in ``TorchModule.mm``
 
@@ -98,7 +98,7 @@ If everything works fine, you should be able to see the inference results on you
     - malamute, malemute, Alaskan malamute
     - Eskimo dog, husky
 
-You may notice that the results are slighly different from the `results <https://pytorch.org/mobile/ios/#install-libtorch-via-cocoapods>`_ we got from the CPU model as shown in the iOS tutorial. This is because by default Metal uses fp16 rather than fp32 to compute. The precision loss is expected.
+Notice that by default Metal uses fp16 rather than fp32 (default for CPU) to compute. A loss in precision is expected.
 
 
 Conclusion
@@ -112,4 +112,4 @@ Learn More
 ----------
 
 - The `Mobilenetv2 <https://pytorch.org/hub/pytorch_vision_mobilenet_v2/>`_ from Torchvision
-- To learn more about how to use ``optimize_for_mobile``, please refer to the `Mobile Perf Recipe <https://pytorch.org/tutorials/recipes/mobile_perf.html>`_
+- To learn more about how to use ``optimize_for_mobile``, please refer to `PyTorch Mobile Performance <../performance/bestPractices>`_.
