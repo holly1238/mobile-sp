@@ -4,12 +4,12 @@ Using the PyTorch Android Libraries
 Using the PyTorch Android Libraries Built from Source or Nightly
 ----------------------------------------------------------------
 
-First add the two aar files built above, or downloaded from the nightly
-built PyTorch Android repos at
+To use the PyTorch Android Libraries, first add the two aar files built in `Building PyTorch Android From Source <..//androidsourcebuild.html>`__, 
+or downloaded from the nightly built PyTorch Android repos from
 `here <https://oss.sonatype.org/#nexus-search;quick~pytorch_android>`__
 and
 `here <https://oss.sonatype.org/#nexus-search;quick~torchvision_android>`__,
-to the Android project’s ``lib`` folder, then add in the project’s app
+to the Android project’s ``lib`` folder. Then, add in the project’s app
 ``build.gradle`` file:
 
 ::
@@ -37,10 +37,10 @@ to the Android project’s ``lib`` folder, then add in the project’s app
        implementation 'com.facebook.fbjni:fbjni-java-only:0.0.3'
    }
 
-Also we have to add all transitive dependencies of our aars. As
+In addition, we have to add all transitive dependencies of our aars. As
 ``pytorch_android`` depends on
 ``com.android.support:appcompat-v7:28.0.0`` or
-``androidx.appcompat:appcompat:1.2.0``, we need to one of them. (In case
+``androidx.appcompat:appcompat:1.2.0``, we need to one of them. (In the case
 of using maven dependencies they are added automatically from
 ``pom.xml``).
 
