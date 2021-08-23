@@ -1,9 +1,9 @@
 iOS Selective Build
 ===================
 
-Starting from 1.4.0, PyTorch supports custom build. You can now build
-the PyTorch library that only contains the operators needed by your
-model. To do that, follow the steps below
+Starting from 1.4.0, to reduce the size of binaries, PyTorch supports selective builds. 
+You can now build the PyTorch library that only contains the operators that are needed by your
+model. To do that, follow the steps below:
 
 1. Verify your PyTorch version is 1.4.0 or above. You can do that by
 checking the value of ``torch.__version__``.
@@ -34,11 +34,10 @@ type. Take the arm64 build for example, the command should be:
    SELECTED_OP_LIST=MobileNetV2.yaml BUILD_PYTORCH_MOBILE=1 IOS_ARCH=arm64 ./scripts/build_ios.sh
 
 4. After the build succeeds, you can integrate the result libraries to
-your project by following the `XCode Setup <#xcode-setup>`__ section
-above.
+your project by following the steps in `XCode Setup <#xcode-setup>`__.
 
 5. The last step is to add a single line of C++ code before running
-``forward``. This is because by default JIT will do some optimizations
+``forward``. This is because by default JIT (TorchScript) will do some optimizations
 on operators (fusion for example), which might break the consistency
 with the ops we dumped from the model.
 
