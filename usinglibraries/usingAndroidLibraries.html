@@ -370,12 +370,12 @@
 <h1>Using the PyTorch Android Libraries<a class="headerlink" href="#using-the-pytorch-android-libraries" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="using-the-pytorch-android-libraries-built-from-source-or-nightly">
 <h2>Using the PyTorch Android Libraries Built from Source or Nightly<a class="headerlink" href="#using-the-pytorch-android-libraries-built-from-source-or-nightly" title="Permalink to this headline">¶</a></h2>
-<p>First add the two aar files built above, or downloaded from the nightly
-built PyTorch Android repos at
+<p>To use the PyTorch Android Libraries, first add the two aar files built in <a class="reference external" href="..//androidsourcebuild.html">Building PyTorch Android From Source</a>,
+or downloaded from the nightly built PyTorch Android repos from
 <a class="reference external" href="https://oss.sonatype.org/#nexus-search;quick~pytorch_android">here</a>
 and
 <a class="reference external" href="https://oss.sonatype.org/#nexus-search;quick~torchvision_android">here</a>,
-to the Android project’s <code class="docutils literal notranslate"><span class="pre">lib</span></code> folder, then add in the project’s app
+to the Android project’s <code class="docutils literal notranslate"><span class="pre">lib</span></code> folder. Then, add in the project’s app
 <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">allprojects</span> <span class="p">{</span>
     <span class="n">repositories</span> <span class="p">{</span>
@@ -401,10 +401,10 @@ to the Android project’s <code class="docutils literal notranslate"><span clas
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Also we have to add all transitive dependencies of our aars. As
+<p>In addition, we have to add all transitive dependencies of our aars. As
 <code class="docutils literal notranslate"><span class="pre">pytorch_android</span></code> depends on
 <code class="docutils literal notranslate"><span class="pre">com.android.support:appcompat-v7:28.0.0</span></code> or
-<code class="docutils literal notranslate"><span class="pre">androidx.appcompat:appcompat:1.2.0</span></code>, we need to one of them. (In case
+<code class="docutils literal notranslate"><span class="pre">androidx.appcompat:appcompat:1.2.0</span></code>, we need to one of them. (In the case
 of using maven dependencies they are added automatically from
 <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>).</p>
 </div>
