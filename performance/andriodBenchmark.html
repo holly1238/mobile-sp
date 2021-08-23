@@ -368,9 +368,9 @@
               
   <div class="section" id="andriod-benchmarking">
 <h1>Andriod Benchmarking<a class="headerlink" href="#andriod-benchmarking" title="Permalink to this headline">¶</a></h1>
-<p>The best way to benchmark (to check if optimizations helped your use case) - is to measure your particular use case that you want to optimize, as performance behavior can vary in different environments.</p>
-<p>PyTorch distribution provides a way to benchmark naked binary that runs the model forward,
-this approach can give more stable measurements rather than testing inside the application.</p>
+<p>The best way to benchmark (to check if optimizations helped your use case) is to measure your particular use case that you want to optimize, as performance behavior can vary in different environments.</p>
+<p>PyTorch distribution provides a way to benchmark naked binary that runs the model forward.
+This approach can give more stable measurements rather than testing inside the application.</p>
 <p>For this you first need to build benchmark binary:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">from</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">root</span><span class="o">-</span><span class="n">pytorch</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
 <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">build_android</span>
