@@ -368,16 +368,15 @@
               
   <div class="section" id="andriod-selective-build">
 <h1>Andriod Selective Build<a class="headerlink" href="#andriod-selective-build" title="Permalink to this headline">¶</a></h1>
-<p>To reduce the size of binaries you can do custom build of PyTorch
-Android with only set of operators required by your model. This includes
-two steps: preparing the list of operators from your model, rebuilding
-pytorch android with specified list.</p>
+<p>Starting from 1.4.0, to reduce the size of binaries, PyTorch supports selective builds.
+You can now build the PyTorch library that only contains the operators that are needed by your
+model. To do that, follow the steps below:</p>
 <p>1. Verify your PyTorch version is 1.4.0 or above. You can do that by
 checking the value of <code class="docutils literal notranslate"><span class="pre">torch.__version__</span></code>.</p>
 <ol class="arabic simple" start="2">
-<li>Preparation of the list of operators</li>
+<li>Prepare the list of operators.</li>
 </ol>
-<p>List of operators of your serialized torchscript model can be prepared
+<p>A list of operators of your serialized torchscript model can be prepared
 in yaml format using python api function <code class="docutils literal notranslate"><span class="pre">torch.jit.export_opnames()</span></code>.
 To dump the operators in your model, say <code class="docutils literal notranslate"><span class="pre">MobileNetV2</span></code>, run the
 following lines of Python code:</p>
@@ -393,16 +392,15 @@ following lines of Python code:</p>
 <li>Building PyTorch Android with prepared operators list.</li>
 </ol>
 <p>To build PyTorch Android with the prepared yaml list of operators,
-specify it in the environment variable <code class="docutils literal notranslate"><span class="pre">SELECTED_OP_LIST</span></code>. Also in the
+specify it in the environment variable <code class="docutils literal notranslate"><span class="pre">SELECTED_OP_LIST</span></code>. Also, in the
 arguments, specify which Android ABIs it should build; by default it
 builds all 4 Android ABIs.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build PyTorch Android library customized for MobileNetV2:</span>
 <span class="n">SELECTED_OP_LIST</span><span class="o">=</span><span class="n">MobileNetV2</span><span class="o">.</span><span class="n">yaml</span> <span class="n">scripts</span><span class="o">/</span><span class="n">build_pytorch_android</span><span class="o">.</span><span class="n">sh</span> <span class="n">arm64</span><span class="o">-</span><span class="n">v8a</span>
 </pre></div>
 </div>
-<p>After successful build you can integrate the result aar files to your
-android gradle project, following the steps from previous section of
-this tutorial (Building PyTorch Android from Source).</p>
+<p>After a successful build you can integrate the result aar files to your
+android gradle project, following the steps from <a class="reference external" href="../androidsourcebuild.html">Building PyTorch Android from Source</a>.</p>
 </div>
 
 

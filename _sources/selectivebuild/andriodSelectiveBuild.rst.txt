@@ -1,17 +1,17 @@
 Andriod Selective Build
 =======================
 
-To reduce the size of binaries you can do custom build of PyTorch
-Android with only set of operators required by your model. This includes
-two steps: preparing the list of operators from your model, rebuilding
-pytorch android with specified list.
+Starting from 1.4.0, to reduce the size of binaries, PyTorch supports selective builds. 
+You can now build the PyTorch library that only contains the operators that are needed by your
+model. To do that, follow the steps below:
 
 1. Verify your PyTorch version is 1.4.0 or above. You can do that by
 checking the value of ``torch.__version__``.
 
-2. Preparation of the list of operators
+2. Prepare the list of operators.
 
-List of operators of your serialized torchscript model can be prepared
+
+A list of operators of your serialized torchscript model can be prepared
 in yaml format using python api function ``torch.jit.export_opnames()``.
 To dump the operators in your model, say ``MobileNetV2``, run the
 following lines of Python code:
@@ -27,8 +27,9 @@ following lines of Python code:
 
 3. Building PyTorch Android with prepared operators list.
 
+
 To build PyTorch Android with the prepared yaml list of operators,
-specify it in the environment variable ``SELECTED_OP_LIST``. Also in the
+specify it in the environment variable ``SELECTED_OP_LIST``. Also, in the
 arguments, specify which Android ABIs it should build; by default it
 builds all 4 Android ABIs.
 
@@ -37,6 +38,5 @@ builds all 4 Android ABIs.
    # Build PyTorch Android library customized for MobileNetV2:
    SELECTED_OP_LIST=MobileNetV2.yaml scripts/build_pytorch_android.sh arm64-v8a
 
-After successful build you can integrate the result aar files to your
-android gradle project, following the steps from previous section of
-this tutorial (Building PyTorch Android from Source).
+After a successful build you can integrate the result aar files to your
+android gradle project, following the steps from `Building PyTorch Android from Source <../androidsourcebuild.html>`__.
