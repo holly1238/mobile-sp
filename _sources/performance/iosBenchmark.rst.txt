@@ -1,10 +1,10 @@
 iOS Benchmarking
 ================
 
-The best way to benchmark (to check if optimizations helped your use case) - is to measure your particular use case that you want to optimize, as performance behavior can vary in different environments.
+The best way to benchmark (to check if optimizations helped your use case) is to measure your particular use case that you want to optimize, as performance behavior can vary in different environments.
 
-PyTorch distribution provides a way to benchmark naked binary that runs the model forward,
-this approach can give more stable measurements rather than testing inside the application.
+PyTorch distribution provides a way to benchmark naked binary that runs the model forward.
+This approach can give more stable measurements rather than testing inside the application.
 
 For iOS, we'll be using our `TestApp <https://github.com/pytorch/pytorch/tree/master/ios/TestApp>`_ as the benchmarking tool.
 

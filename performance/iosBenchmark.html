@@ -368,9 +368,9 @@
               
   <div class="section" id="ios-benchmarking">
 <h1>iOS Benchmarking<a class="headerlink" href="#ios-benchmarking" title="Permalink to this headline">¶</a></h1>
-<p>The best way to benchmark (to check if optimizations helped your use case) - is to measure your particular use case that you want to optimize, as performance behavior can vary in different environments.</p>
-<p>PyTorch distribution provides a way to benchmark naked binary that runs the model forward,
-this approach can give more stable measurements rather than testing inside the application.</p>
+<p>The best way to benchmark (to check if optimizations helped your use case) is to measure your particular use case that you want to optimize, as performance behavior can vary in different environments.</p>
+<p>PyTorch distribution provides a way to benchmark naked binary that runs the model forward.
+This approach can give more stable measurements rather than testing inside the application.</p>
 <p>For iOS, we’ll be using our <a class="reference external" href="https://github.com/pytorch/pytorch/tree/master/ios/TestApp">TestApp</a> as the benchmarking tool.</p>
 <p>To begin with, let’s apply the <code class="docutils literal notranslate"><span class="pre">optimize_for_mobile</span></code> method to our python script located at <a class="reference external" href="https://github.com/pytorch/pytorch/blob/master/ios/TestApp/benchmark/trace_model.py">TestApp/benchmark/trace_model.py</a>. Simply modify the code as below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
