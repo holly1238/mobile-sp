@@ -12,7 +12,7 @@ Semantic image segmentation is a computer vision task that uses semantic labels 
 
 In this tutorial, we will provide a step-by-step guide on how to prepare and run the PyTorch DeepLabV3 model on Android, taking you from the beginning of having a model you may want to use on Android to the end of having a complete Android app using the model. We will also cover practical and general tips on how to check if your next favorable pre-trained PyTorch models can run on Android, and how to avoid pitfalls.
 
-.. note:: Before going through this tutorial, you should check out `PyTorch Mobile for Android <https://pytorch.org/mobile/android/>`_ and give the PyTorch Android `HelloWorld <https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp>`_ example app a quick try. This tutorial will go beyond the image classification model, usually the first kind of model deployed on mobile. The complete code repo for this tutorial is available `here <https://github.com/pytorch/android-demo-app/tree/master/ImageSegmentation>`_.
+.. note:: Before going through this tutorial, you should give the PyTorch Android `HelloWorld <https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp>`_ example app a quick try. This tutorial will go beyond the image classification model, usually the first kind of model deployed on mobile. The complete code repo for this tutorial is available `here <https://github.com/pytorch/android-demo-app/tree/master/ImageSegmentation>`_.
 
 Learning Objectives
 -------------------
@@ -47,7 +47,7 @@ Steps
 The first step to deploying a model on Android is to convert the model into the `TorchScript <https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html>`_ format.
 
 .. note::
-    Not all PyTorch models can be converted to TorchScript at this time because a model definition may use language features that are not in TorchScript, which is a subset of Python. See the `Script and Optimize Recipe <../recipes/script_optimized.html>`_ for more details.
+    Not all PyTorch models can be converted to TorchScript at this time because a model definition may use language features that are not in TorchScript, which is a subset of Python. See the `Script and Optimize Recipe <../modelprep/scriptOptimizeMobile.html>`_ for more details.
 
 Simply run the script below to generate the scripted model `deeplabv3_scripted.pt`:
 
@@ -208,9 +208,9 @@ The UI for this app is also similar to that for HelloWorld, except that you do n
 
 Now when you run the app on an Android emulator or preferably an actual device, you will see screens like the following:
 
-.. image:: /_static/img/deeplabv3_android.png
+.. image:: /_static/images/deeplabv3_android.png
    :width: 300 px
-.. image:: /_static/img/deeplabv3_android2.png
+.. image:: /_static/images/deeplabv3_android2.png
    :width: 300 px
 
 
@@ -225,6 +225,5 @@ More advanced topics such as quantization and using models via transfer learning
 Learn More
 ------------
 
-1. `PyTorch Mobile site <https://pytorch.org/mobile>`_
-2. `DeepLabV3 model <https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101>`_
-3. `DeepLabV3 paper <https://arxiv.org/pdf/1706.05587.pdf>`_
+1. `DeepLabV3 model <https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101>`_
+2. `DeepLabV3 paper <https://arxiv.org/pdf/1706.05587.pdf>`_
