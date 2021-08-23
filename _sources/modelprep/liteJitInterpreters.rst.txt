@@ -1,5 +1,5 @@
 Android PyTorch Jit Interpreter
-===============================
+-------------------------------
 
 PyTorch JIT interpreter is the default interpreter before 1.9 (a version
 of our PyTorch interpreter that is not as size-efficient). It will still
@@ -17,7 +17,7 @@ be supported in 1.9, and can be used via ``build.gradle``:
    }
 
 iOS PyTorch Jit Interpreter
-===========================
+---------------------------
 
 PyTorch JIT interpreter is the default interpreter before 1.9 (a version
 of our PyTorch interpreter that is not as size-efficient). It will still
