@@ -37,6 +37,8 @@
   :maxdepth: 1
   :caption: Model Preparation
   
+  modelprep/modelPrepAndroid
+  modelprep/modelPrepiOS
   modelprep/quantization
   modelprep/scriptOptimizeMobile
   modelprep/liteJitInterpreters
