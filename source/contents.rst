@@ -42,6 +42,7 @@
   modelprep/quantization
   modelprep/scriptOptimizeMobile
   modelprep/liteJitInterpreters
+  modelprep/mobileInterpreter
   
 .. toctree::
   :maxdepth: 2
