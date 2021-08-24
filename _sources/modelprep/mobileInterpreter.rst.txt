@@ -1,5 +1,5 @@
-(beta) Efficient mobile interpreter in Android and iOS
-======================================================
+Efficient Mobile Interpreter in Android and iOS
+===============================================
 
 **Author**: `Chen Lai <https://github.com/cccclai>`_, `Martin Yuan <https://github.com/iseeyuan>`_
 
