@@ -8,7 +8,7 @@ Introduction
 ------------
 
 After a PyTorch model is trained or a pre-trained model is made available, it is normally not ready to be used in mobile apps yet.
-It needs to be quantized (see the `Quantization <../modelprep/quantization.html>`_), converted to TorchScript so Android apps can load it,
+It needs to be quantized (see `Quantization <../modelprep/quantization.html>`_), converted to TorchScript so Android apps can load it,
 and optimized for mobile apps. Furthermore, Android apps need to be set up correctly to enable the use of PyTorch Mobile libraries,
 before they can load and use the model for inference.
 
