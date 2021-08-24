@@ -1,5 +1,5 @@
-Model Preparation for Android Recipe
-=====================================
+Model Preparation for Android
+=============================
 
 This recipe demonstrates how to prepare a PyTorch MobileNet v2 image classification model for Android apps,
 and how to set up Android projects to use the mobile-ready model file.
