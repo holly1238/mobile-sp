@@ -413,7 +413,7 @@ Furthermore, iOS apps need to be set up correctly to enable the use of PyTorch M
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The <cite>trace</cite> method only scripts the code path executed during the trace, so it will not work properly for models that include decision branches.
-See <a class="reference external" href="../modelprep/scriptOptimizeMobile.html">Script and Optimize for Mobile Recipe</a> for more details.</p>
+See <a class="reference external" href="../modelprep/scriptOptimizeMobile.html">Script and Optimize for Mobile</a> for more details.</p>
 </div>
 <p>Then optimize the TorchScript formatted model for mobile and save it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.utils.mobile_optimizer</span> <span class="k">import</span> <span class="n">optimize_for_mobile</span>

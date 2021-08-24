@@ -4,7 +4,7 @@ Model Preparation for iOS
 This recipe demonstrates how to prepare a PyTorch MobileNet v2 image classification model for iOS apps, and how to set up an iOS project to use the mobile-ready model file.
 
 Introduction
------------------
+------------
 
 After a PyTorch model is trained or a pre-trained model is made available, it is normally not ready to be used in mobile apps yet.
 It needs to be quantized (see `Quantization <../modelprep/quantization.html>`_ for more details), 
@@ -54,7 +54,7 @@ or
 
 .. warning::
     The `trace` method only scripts the code path executed during the trace, so it will not work properly for models that include decision branches.
-    See `Script and Optimize for Mobile Recipe <../modelprep/scriptOptimizeMobile.html>`_ for more details.
+    See `Script and Optimize for Mobile <../modelprep/scriptOptimizeMobile.html>`_ for more details.
 
 
 Then optimize the TorchScript formatted model for mobile and save it:
